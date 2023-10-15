@@ -119,7 +119,7 @@ const Navbar = ({
         >
           <MenuOutlined style={{ verticalAlign: '0rem' }} />
         </Button>
-        <Drawer title="Menu" placement="right" onClose={onClose} visible={open}>
+        <Drawer title="Menu" placement="right" onClose={onClose} open={open}>
           <Menu
             theme="light"
             mode="vertical"
