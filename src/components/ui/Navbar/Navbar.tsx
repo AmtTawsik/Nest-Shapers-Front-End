@@ -39,7 +39,7 @@ const Navbar = ({
 
   return (
     <Layout className="layout">
-      <Header className="flex items-center px-3 lg:px-12">
+      <Header className="flex items-center px-3 lg:px-12 bg-white border-b-2  lg:h-24">
         {/* Sider nav button for mobile device start */}
         {hasSider && (
           <Button
@@ -58,12 +58,12 @@ const Navbar = ({
         <Content>
           <Link href="/">
             <Title
-              className={`m-0 text-white text-lg lg:text-3xl ${
+              className={`m-0 text-hcGreen-base text-lg lg:text-3xl font-bold ${
                 hasSider &&
-                'text-center text-cyan-500 text-lg lg:text-3xl lg:text-left'
+                'text-center text-hcGreen-base text-lg lg:text-3xl lg:text-left'
               }`}
             >
-              House Crafters
+              Nest<span className=" text-hcOrange-base">Shapers</span>
             </Title>
           </Link>
         </Content>
@@ -71,7 +71,7 @@ const Navbar = ({
 
         {/* Desktop menubar start */}
         <Menu
-          className="lg:block hidden"
+          className="lg:flex lg:items-center hidden bg-white text-hcGreen-base font-bold text-lg"
           disabledOverflow
           theme="dark"
           mode="horizontal"
@@ -83,26 +83,32 @@ const Navbar = ({
             </Menu.Item>
           ))}
           {session ? (
-            <Button type="primary" className=" bg-red-500 ml-6">
+            <Button
+              size="large"
+              type="primary"
+              className=" bg-hcOrange-base px-6 ml-6"
+            >
               Sign Out
             </Button>
           ) : (
             <>
               <Button
                 type="primary"
+                size="large"
                 onClick={() => {
                   router.push('/signin');
                 }}
-                className="ml-6"
+                className="ml-6 bg-hcOrange-base px-6"
               >
                 Sign In
               </Button>
               <Button
                 type="primary"
+                size="large"
                 onClick={() => {
                   router.push('/register');
                 }}
-                className=" ml-2"
+                className=" ml-2 bg-hcOrange-base px-6"
               >
                 Register
               </Button>
@@ -114,7 +120,7 @@ const Navbar = ({
         {/* Menubar for mobile start */}
         <Button
           type="primary"
-          className="lg:hidden bg-cyan-500"
+          className="lg:hidden bg-hcOrange-base"
           onClick={showDrawer}
         >
           <MenuOutlined style={{ verticalAlign: '0rem' }} />
@@ -132,12 +138,13 @@ const Navbar = ({
               </Menu.Item>
             ))}
             {session ? (
-              <Button type="primary" className=" bg-red-500">
+              <Button type="primary" className=" bg-hcOrange-base px-6">
                 Sign Out
               </Button>
             ) : (
               <div className="mt-6">
                 <Button
+                  className="bg-hcOrange-base px-6"
                   type="primary"
                   onClick={() => {
                     router.push('/signin');
@@ -150,7 +157,7 @@ const Navbar = ({
                   onClick={() => {
                     router.push('/register');
                   }}
-                  className="ml-2"
+                  className="ml-2 bg-hcOrange-base px-6"
                 >
                   Register
                 </Button>
