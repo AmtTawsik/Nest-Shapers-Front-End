@@ -1,12 +1,13 @@
-import { IChildrenNode } from "@/types"
+import { IChildrenNode } from '@/types';
+import CustomerHeader from '../../components/view/headers/CustomerHeader';
 
-function CustomerLayout({children}: IChildrenNode) {
-    return (
-        <div>
-            <h1>Customer Layout</h1>
-            {children}
-        </div>
-    )
+function CustomerLayout({ children }: IChildrenNode) {
+  return (
+    <div>
+      <CustomerHeader />
+      {children}
+    </div>
+  );
 }
 
-export default CustomerLayout
+export default CustomerLayout;

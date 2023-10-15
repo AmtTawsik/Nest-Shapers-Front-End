@@ -1,9 +1,10 @@
+import SuperAdminHeader from '@/components/view/headers/SuperAdminHeader';
 import { IChildrenNode } from '@/types';
 
 function SuperAdminLayoutPage({ children }: IChildrenNode) {
   return (
     <div>
-      <h1>This is super admin layout page</h1>
+      <SuperAdminHeader />
       {children}
     </div>
   );

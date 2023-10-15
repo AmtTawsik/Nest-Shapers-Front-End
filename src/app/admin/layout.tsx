@@ -1,9 +1,10 @@
 import { IChildrenNode } from '@/types';
+import AdminHeader from '../../components/view/headers/AdminHeader';
 
 function AdminLayout({ children }: IChildrenNode) {
   return (
     <div>
-      <h1>This is admin layout page</h1>
+      <AdminHeader />
       {children}
     </div>
   );
