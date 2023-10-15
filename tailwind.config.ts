@@ -1,4 +1,4 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from 'tailwindcss';
 
 const config: Config = {
   content: [
@@ -15,6 +15,10 @@ const config: Config = {
       },
     },
   },
+  corePlugins: {
+    preflight: false,
+  },
+  important: true,
   plugins: [],
-}
-export default config
+};
+export default config;
