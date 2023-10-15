@@ -26,8 +26,8 @@ const Sidebar = ({
       <Content>
         <Layout className="lg:flex hidden">
           <Sider
-            width={250}
-            className="min-h-screen bg-gray-300"
+            width={280}
+            className="min-h-screen bg-teal-950"
             style={{
               overflow: 'auto',
               height: '100vh',
@@ -38,13 +38,13 @@ const Sidebar = ({
             }}
           >
             <Menu
-              className="h-full px-3 bg-transparent py-1 bg-gray-300"
+              className="h-full px-3 bg-transparent text-white py-4 sidebar-menu"
               mode="inline"
               defaultSelectedKeys={[getSelectedKey()]}
               selectedKeys={[getSelectedKey()]}
             >
               {items?.map((item) => (
-                <Menu.Item key={item.key}>
+                <Menu.Item key={item.key} className=" bg-teal-900 mb-2">
                   <Link href={item.href}>{item.label}</Link>
                 </Menu.Item>
               ))}

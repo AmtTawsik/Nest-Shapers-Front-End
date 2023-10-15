@@ -9,15 +9,15 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        hcGreen: {
-          base: "#00E4E7",
+        blue: {
+          base: "#18F0E3",
           dark: "#0b5900",
           light: "#ecf5e6",
           dark2: "#0d1f01",
           dark3: "#060f01",
         },
-        hcOrange: {
-          base: "#E0E700",
+        green: {
+          base: "#6FE407",
         },
         hcGrey: {
           dark: "#333333",
