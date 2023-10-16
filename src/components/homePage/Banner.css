@@ -45,6 +45,7 @@
   line-height: 1.1;
   position: relative;
   margin-bottom: 64px;
+  font-family: 'Open Sans', sans-serif;
 }
 
 @media only screen and (max-width: 1200px) {

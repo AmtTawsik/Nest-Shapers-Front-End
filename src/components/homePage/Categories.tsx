@@ -3,7 +3,7 @@ import CategoryCard from '../common/CategoryCard';
 function Categories() {
   return (
     <section className="block">
-      <div className="py-6 md:py-12 lg:pb-24 lg:pt-32 mx-auto w-full max-w-7xl px-5 md:px-10">
+      <div className="py-6 md:py-12 lg:pb-32 lg:pt-32 mx-auto w-full max-w-7xl px-5 md:px-10">
         <div className="">
           <div className="text-center">
             <h2 className="font-bold text-3xl text-teal-950 md:text-5xl">

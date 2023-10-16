@@ -1,8 +1,10 @@
 import HomeBanner from '@/components/homePage/Banner';
 import CallToAction from '@/components/homePage/CallToAction';
 import Categories from '@/components/homePage/Categories';
+import Features from '@/components/homePage/Features';
 import LatestBlogs from '@/components/homePage/LatestBlogs';
 import Overview from '@/components/homePage/Overview';
+import Reviews from '@/components/homePage/Reviews';
 import Services from '@/components/homePage/Services';
 import Showcase from '@/components/homePage/Showcase';
 import UpcomingService from '@/components/homePage/UpcomingService';
@@ -18,7 +20,9 @@ export default function Home() {
       <HomeBanner />
       {/* <FeaturedIn /> */}
       <Overview />
+      <Features />
       <Categories />
+      <Reviews />
       <Services />
       <CallToAction />
       <UpcomingService />
