@@ -1,4 +1,9 @@
-import Navbar from '@/components/ui/Navbar/Navbar';
+//import Navbar from '@/components/ui/Navbar/Navbar';
+
+import dynamic from 'next/dynamic';
+const Navbar = dynamic(() => import('@/components/ui/Navbar/Navbar'), {
+  ssr: false,
+});
 
 const PublicHeader = () => {
   const items = [
@@ -8,11 +13,7 @@ const PublicHeader = () => {
     { key: '4', label: 'Blog', href: '/blogs' },
     { key: '5', label: 'Contact Us', href: '/contact-us' },
   ];
-  return (
-    <>
-      <Navbar items={items} />
-    </>
-  );
+  return <Navbar items={items} />;
 };
 
 export default PublicHeader;

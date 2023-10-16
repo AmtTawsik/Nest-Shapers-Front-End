@@ -1,6 +1,12 @@
 'use client';
+import { authKey } from '@/constants/global';
 import { useAppDispatch } from '@/redux/hooks';
 import { showSidebarDrawer } from '@/redux/slices/sidebarSlice';
+import {
+  getUserInfo,
+  isLoggedIn,
+  removeUserInfo,
+} from '@/services/auth.service';
 import { MenuOutlined } from '@ant-design/icons';
 import { Button, Drawer, Layout, Menu, Typography } from 'antd';
 
@@ -22,6 +28,8 @@ const Navbar = ({
   const router = useRouter();
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const { role } = getUserInfo() as any;
+
   const showDrawer = () => {
     setOpen(true);
   };
@@ -35,7 +43,12 @@ const Navbar = ({
     window.scrollTo(0, 0);
   }, []);
 
-  let session = false;
+  const isUserLoggedIn = isLoggedIn();
+
+  const logOut = () => {
+    removeUserInfo(authKey);
+    router.push('/signin');
+  };
 
   return (
     <Layout className="layout">
@@ -82,14 +95,29 @@ const Navbar = ({
               <Link href={item.href}>{item.label}</Link>
             </Menu.Item>
           ))}
-          {session ? (
-            <Button
-              size="large"
-              type="primary"
-              className=" bg-green-base px-6 ml-6"
-            >
-              Sign Out
-            </Button>
+          {isUserLoggedIn ? (
+            <>
+              {role === 'customer' && (
+                <Button
+                  type="primary"
+                  size="large"
+                  onClick={() => {
+                    router.push('/dashboard');
+                  }}
+                  className="ml-6 bg-teal-700 px-6"
+                >
+                  Dashboard
+                </Button>
+              )}
+              <Button
+                size="large"
+                type="primary"
+                className=" bg-green-base px-6 ml-6"
+                onClick={logOut}
+              >
+                Sign Out
+              </Button>
+            </>
           ) : (
             <>
               <Button
@@ -137,8 +165,12 @@ const Navbar = ({
                 <Link href={item.href}>{item.label}</Link>
               </Menu.Item>
             ))}
-            {session ? (
-              <Button type="primary" className=" bg-green-base px-6">
+            {isUserLoggedIn ? (
+              <Button
+                type="primary"
+                className=" bg-green-base px-6"
+                onClick={logOut}
+              >
                 Sign Out
               </Button>
             ) : (

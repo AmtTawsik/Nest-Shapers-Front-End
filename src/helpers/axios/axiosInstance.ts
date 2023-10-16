@@ -1,6 +1,9 @@
 // import { authKey } from '@/constants/storgeKey';
 // import { getNewAccessToken } from '@/services/auth.service';
+import { authKey } from '@/constants/global';
+import { getNewAccessToken } from '@/services/auth.service';
 import { IGenericErrorResponse, ResponseSuccessType } from '@/types';
+import { getFromLocalStorage, setLocalStorage } from '@/utils/localStorage';
 // import { getFromLocalStorage, setLocalStorage } from '@/utils/localStorage';
 
 import axios from 'axios';
@@ -14,10 +17,10 @@ instance.defaults.timeout = 60000;
 instance.interceptors.request.use(
   function (config) {
     // Do something before request is sent
-    // const accessToken = getFromLocalStorage(authKey);
-    // if (accessToken) {
-    //   config.headers.Authorization = accessToken;
-    // }
+    const accessToken = getFromLocalStorage(authKey);
+    if (accessToken) {
+      config.headers.Authorization = accessToken;
+    }
     return config;
   },
   function (error) {
@@ -42,12 +45,13 @@ instance.interceptors.response.use(
   async function (error) {
     const config = error?.config;
     if (error?.response?.status === 403 && !config?.sent) {
-      //   config.sent = true;
-      //   const response = await getNewAccessToken();
-      //   const accessToken = response?.data?.accessToken
-      //    config.headers['Authorization'] = accessToken;
-      //    setLocalStorage(authKey, accessToken)
-      //    return instance(config)
+      config.sent = true;
+      const response = await getNewAccessToken();
+
+      const accessToken = response?.data?.accessToken;
+      config.headers['Authorization'] = accessToken;
+      setLocalStorage(authKey, accessToken);
+      return instance(config);
     } else {
       const responseObject: IGenericErrorResponse = {
         statusCode: error?.response?.data?.error?.statusCode || 500,

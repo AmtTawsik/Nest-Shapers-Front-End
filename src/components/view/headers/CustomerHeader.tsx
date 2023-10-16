@@ -1,4 +1,8 @@
-import Navbar from '@/components/ui/Navbar/Navbar';
+// import Navbar from '@/components/ui/Navbar/Navbar';
+import dynamic from 'next/dynamic';
+const Navbar = dynamic(() => import('@/components/ui/Navbar/Navbar'), {
+  ssr: false,
+});
 
 const CustomerHeader = () => {
   const items = [
@@ -10,11 +14,7 @@ const CustomerHeader = () => {
     { key: '6', label: 'My Profile', href: '/my-profile' },
     { key: '6', label: 'Feedback', href: '/feedback' },
   ];
-  return (
-    <>
-      <Navbar items={items} hasSider />
-    </>
-  );
+  return <Navbar items={items} hasSider />;
 };
 
 export default CustomerHeader;

@@ -37,7 +37,10 @@ function FormInput({
   return (
     <>
       {required ? <span style={{ color: 'red' }}>*</span> : null}
-      {label ? label : null}
+      <span className=" mb-1 text-base text-hcGrey-dark">
+        {' '}
+        {label ? label : null}
+      </span>
       <Controller
         control={control}
         name={name}
@@ -57,6 +60,7 @@ function FormInput({
               size={size}
               value={value ? value : field.value}
               placeholder={placeholder}
+              className=" w-full"
             />
           )
         }
