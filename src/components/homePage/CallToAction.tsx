@@ -1,7 +1,7 @@
 function CallToAction() {
   return (
     <div>
-      <section className="bg-teal-800">
+      <section className="bg-teal-800 ">
         <div className="mx-auto w-full max-w-7xl bg-teal-800  text-white">
           <div className="mx-auto w-full max-w-3xl py-16 text-center md:py-24 lg:py-32">
             <div className="mb-6 flex-col md:mb-10 lg:mb-12">
@@ -18,7 +18,7 @@ function CallToAction() {
               </div>
             </div>
 
-            <div className="mx-auto mb-4 flex flex-col">
+            <div className="mx-auto mb-4 flex flex-col px-6">
               <form
                 name="email-form"
                 method="get"

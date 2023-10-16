@@ -4,7 +4,7 @@ function UpcomingService() {
   return (
     <div>
       <section>
-        <div className="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-24 lg:py-32">
+        <div className="mx-auto w-full max-w-7xl px-5 py-32 md:px-10 md:py-24 lg:py-32">
           <div className="flex flex-col items-center">
             <div className="mb-8 max-w-[800px] text-center md:mb-12 lg:mb-16">
               <h2 className="mb-4 mt-6 text-3xl text-teal-950 font-extrabold md:text-5xl">

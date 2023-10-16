@@ -22,6 +22,8 @@ function ServiceCard() {
             Lorem ipsum dolor sit amet, &nbsp;elit ut aliquam, purus sit amet
             luctus venenatis elit ut aliquam, purus sit amet luctus venenatis
           </p>
+
+          <p className="text-teal-700 font-bold">Price: 1500 BDT</p>
         </div>
         <div>
           <a

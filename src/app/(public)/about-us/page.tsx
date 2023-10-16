@@ -1,7 +1,15 @@
+import AboutUsSection from '@/components/aboutUsPage/AboutUsSection';
+import OurGoals from '@/components/aboutUsPage/OurGoals';
+import OurMisson from '@/components/aboutUsPage/OurMisson';
+import TeamMember from '@/components/aboutUsPage/TeamMember';
+
 function AboutUsPage() {
   return (
     <div>
-      <h1>This is about us page</h1>
+      <AboutUsSection />
+      <OurMisson />
+      <OurGoals />
+      <TeamMember />
     </div>
   );
 }

@@ -2,7 +2,7 @@ import { Image } from 'antd';
 
 function Showcase() {
   return (
-    <section className="block">
+    <section className="block px-3 md:px-0 py-12 md:py-0">
       <div className="py-6 md:py-12 lg:pb-32 lg:pt-32 w-full">
         <div className="">
           <div className="text-center">
@@ -16,7 +16,7 @@ function Showcase() {
               </p>
             </div>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5  justify-items-center sm:justify-items-stretch mb-6 md:mb-10 lg:mb-12">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-5  justify-items-center sm:justify-items-stretch mb-6 md:mb-10 lg:mb-12">
             <div className="w-full h-[250px]">
               <Image
                 alt="showcase work image"

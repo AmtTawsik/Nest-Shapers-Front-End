@@ -18,14 +18,13 @@ export default function Home() {
       </div>
       <PublicHeader />
       <HomeBanner />
-      {/* <FeaturedIn /> */}
       <Overview />
       <Features />
       <Categories />
-      <Reviews />
       <Services />
       <CallToAction />
       <UpcomingService />
+      <Reviews />
       <LatestBlogs />
       <Showcase />
     </main>

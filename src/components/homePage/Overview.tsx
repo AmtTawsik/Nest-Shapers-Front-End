@@ -3,7 +3,7 @@ import Image from 'next/image';
 function Overview() {
   return (
     <div>
-      <section className="block bg-teal-50">
+      <section className="block bg-white">
         <div className="py-16 md:py-24 lg:py-32 mx-auto w-full max-w-7xl px-5 md:px-10">
           <div className="mx-auto max-w-[1000px] text-center">
             <div className="text-center">

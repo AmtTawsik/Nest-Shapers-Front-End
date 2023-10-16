@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 function Features() {
   return (
-    <section className="bg-zinc-50">
+    <section className="bg-teal-50">
       <div className="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-24 lg:py-32">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="mb-4 mt-6 text-3xl text-teal-950 font-extrabold md:text-5xl">
