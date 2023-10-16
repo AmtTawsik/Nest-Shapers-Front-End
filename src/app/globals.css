@@ -420,3 +420,7 @@ video {
 .sidebar-menu .ant-menu-item a:hover {
   color: white !important;
 }
+
+.ant-input-search-button {
+  background-color: #ca7558 !important;
+}
