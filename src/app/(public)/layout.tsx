@@ -1,3 +1,5 @@
+'use client';
+
 import PublicHeader from '@/components/view/headers/PublicHeader';
 import { IChildrenNode } from '@/types';
 

@@ -57,7 +57,7 @@ const Navbar = ({
         {hasSider && (
           <Button
             type="primary"
-            className="lg:hidden bg-green-base"
+            className="lg:hidden bg-hcOrange-base"
             onClick={() => {
               dispatch(showSidebarDrawer());
             }}
@@ -73,10 +73,10 @@ const Navbar = ({
             <Title
               className={`m-0 text-teal-700 text-lg lg:text-2xl font-bold ${
                 hasSider &&
-                'text-center text-blue-base text-lg lg:text-2xl lg:text-left'
+                'text-center text-hcGreen-base text-lg lg:text-2xl lg:text-left'
               }`}
             >
-              Nest<span className=" text-green-base">Shapers</span>
+              Nest<span className=" text-hcOrange-base">Shapers</span>
             </Title>
           </Link>
         </Content>
@@ -112,7 +112,7 @@ const Navbar = ({
               <Button
                 size="large"
                 type="primary"
-                className=" bg-green-base px-6 ml-6"
+                className=" bg-hcOrange-base px-6 ml-6"
                 onClick={logOut}
               >
                 Sign Out
@@ -126,7 +126,7 @@ const Navbar = ({
                 onClick={() => {
                   router.push('/signin');
                 }}
-                className="ml-6 bg-green-base px-6"
+                className="ml-6 bg-hcOrange-base px-6"
               >
                 Sign In
               </Button>
@@ -136,7 +136,7 @@ const Navbar = ({
                 onClick={() => {
                   router.push('/register');
                 }}
-                className=" ml-2 bg-green-base px-6"
+                className=" ml-2 bg-hcOrange-base px-6"
               >
                 Register
               </Button>
@@ -148,7 +148,7 @@ const Navbar = ({
         {/* Menubar for mobile start */}
         <Button
           type="primary"
-          className="lg:hidden bg-green-base"
+          className="lg:hidden bg-hcOrange-base"
           onClick={showDrawer}
         >
           <MenuOutlined style={{ verticalAlign: '0rem' }} />
@@ -168,7 +168,7 @@ const Navbar = ({
             {isUserLoggedIn ? (
               <Button
                 type="primary"
-                className=" bg-green-base px-6"
+                className=" bg-hcOrange-base px-6"
                 onClick={logOut}
               >
                 Sign Out
@@ -176,7 +176,7 @@ const Navbar = ({
             ) : (
               <div className="mt-6">
                 <Button
-                  className="bg-green-base px-6"
+                  className="bg-hcOrange-base px-6"
                   type="primary"
                   onClick={() => {
                     router.push('/signin');
@@ -189,7 +189,7 @@ const Navbar = ({
                   onClick={() => {
                     router.push('/register');
                   }}
-                  className="ml-2 bg-green-base px-6"
+                  className="ml-2 bg-hcOrange-base px-6"
                 >
                   Register
                 </Button>

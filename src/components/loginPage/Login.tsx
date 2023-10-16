@@ -18,7 +18,7 @@ type FormValues = {
 };
 
 function Login() {
-  const [userLogin] = useUserLoginMutation();
+  const [userLogin, { isLoading }] = useUserLoginMutation();
   const router = useRouter();
 
   const [errorMessage, setErrorMessage] = useState('');
@@ -65,11 +65,7 @@ function Login() {
           Login first before decorate your house
         </h1>
         <div>
-          <Form
-            submitHandler={onSubmit}
-            isReset={false}
-            resolver={yupResolver(loginSchema)}
-          >
+          <Form submitHandler={onSubmit} resolver={yupResolver(loginSchema)}>
             <div>
               <FormInput
                 type="text"
@@ -94,9 +90,10 @@ function Login() {
             </div>
             <button
               type="submit"
-              className=" w-full py-2 rounded-md text-white text-lg bg-green-base"
+              className=" w-full py-2 rounded-md text-white text-lg bg-hcOrange-base"
+              disabled={isLoading}
             >
-              Login
+              {isLoading ? 'Please went a moment...' : 'Login'}
             </button>
           </Form>
           {errorMessage && (

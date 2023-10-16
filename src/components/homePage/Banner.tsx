@@ -1,27 +1,45 @@
 import { Carousel } from 'antd';
-import React from 'react';
-
-const contentStyle: React.CSSProperties = {
-  height: '600px',
-  color: '#fff',
-  lineHeight: '160px',
-  textAlign: 'center',
-  background: '#364d79',
-};
+import './Banner.css';
 
 const HomeBanner = () => (
   <Carousel autoplay>
-    <div className=" bg-teal-700 md:max-h-[83.5vh]">
-        <img className='w-full' src="https://i.ibb.co/0GHJ55Y/slider1.webp" alt="Slider-1" />
-    </div>
-    <div className=" bg-teal-700 md:max-h-[83.5vh]">
-        <img className='w-full' src="https://i.ibb.co/jgfY1SH/slider2.webp" alt="" />
-    </div>
-    <div className=" bg-teal-700 md:max-h-[83.5vh]">
-        <img className='w-full' src="https://i.ibb.co/mhR7pdj/slider3.webp" alt="" />
-    </div>
+    <section className="banner banner-one" style={{}}>
+      <div className="banner-content">
+        <span>Blooms & Beyond: Elevate Your Garden</span>
+        <h1>
+          Transform your outdoor space with our expert gardening services and
+          thoughtful landscape designs.
+        </h1>
+        <button className="px-8 py-4 rounded-md text-white text-lg bg-hcOrange-base">
+          Our Services
+        </button>
+      </div>
+    </section>
+    <section className="banner banner-two">
+      <div className="banner-content">
+        <span>Above it All: Roffing Excellence</span>
+        <h1>
+          Trust our roofing expertise to secure your home with durable solutions
+          and peace of mind.
+        </h1>
+        <button className="px-8 py-4 rounded-md text-white text-lg bg-hcOrange-base">
+          Our Services
+        </button>
+      </div>
+    </section>
+    <section className="banner banner-three">
+      <div className="banner-content">
+        <span>Spotless Sanctuary: Our Cleaning Mastery</span>
+        <h1>
+          Experience the magic of a pristine home through our thorough cleaning
+          services
+        </h1>
+        <button className="px-8 py-4 rounded-md text-white text-lg bg-hcOrange-base">
+          Our Services
+        </button>
+      </div>
+    </section>
   </Carousel>
 );
 
 export default HomeBanner;
-

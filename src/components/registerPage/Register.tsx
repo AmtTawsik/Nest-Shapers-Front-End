@@ -4,9 +4,13 @@
 // import { useUserLoginMutation } from '@/redux/api/authApi';
 // import { storeUserInfo } from '@/services/auth.service';
 import { genderOptions } from '@/constants/global';
-import { Col, Row } from 'antd';
+import { useUserRegisterMutation } from '@/redux/api/authApi';
+import { registerSchema } from '@/schemas/register';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { Col, Row, message } from 'antd';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 import { SubmitHandler } from 'react-hook-form';
 import Form from '../ui/Form/Form';
 import FormInput from '../ui/Form/FormInput';
@@ -23,21 +27,23 @@ type FormValues = {
 };
 
 function RegisterForm() {
-  //   const [userLogin] = useUserLoginMutation();
+  const [userRegister, { isLoading }] = useUserRegisterMutation();
+  const [errorMessage, setErrorMessage] = useState('');
   const router = useRouter();
 
   const onSubmit: SubmitHandler<FormValues> = async (data) => {
     try {
-      console.log(data);
-      //   const res = await userLogin({ ...data }).unwrap();
+      const res = await userRegister({ ...data }).unwrap();
+      router.push('/signin');
+      setErrorMessage('');
+    } catch (error: any) {
+      if (error.message === 'email must be a unique value') {
+        setErrorMessage('User already exist with this email');
+      } else {
+        setErrorMessage(error.message);
+      }
 
-      //   if (res?.accessToken) {
-      //     router.push('/profile');
-      //     message.success('User logged in successfully');
-      //   }
-
-      //   storeUserInfo({ accessToken: res?.accessToken });
-    } catch (error) {
+      message.error(errorMessage || 'Something went worng');
       console.log(error);
     }
   };
@@ -55,7 +61,11 @@ function RegisterForm() {
           Registration
         </h1>
         <div>
-          <Form submitHandler={onSubmit} isReset={false}>
+          <Form
+            submitHandler={onSubmit}
+            isReset={false}
+            resolver={yupResolver(registerSchema)}
+          >
             <Row gutter={{ xs: 32, sm: 32, md: 32, lg: 32 }}>
               <Col
                 className="gutter-row w-full"
@@ -189,11 +199,15 @@ function RegisterForm() {
 
             <button
               type="submit"
-              className=" w-full py-2 rounded-md text-white text-lg bg-green-base"
+              className=" w-full py-2 rounded-md text-white text-lg bg-hcOrange-base"
+              disabled={isLoading}
             >
-              Register
+              {isLoading ? 'Signing up...' : 'Register'}
             </button>
           </Form>
+          {errorMessage && (
+            <p className="mt-2 text-red-500 text-base">{errorMessage}</p>
+          )}
           <p className="mt-1">
             Already have an account? <Link href="/signin">Login</Link>
           </p>
