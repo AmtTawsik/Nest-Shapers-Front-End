@@ -6,5 +6,8 @@ export enum tagTypes {
   service = 'service',
   availableService = 'available-service',
   upcomingService = 'upcoming-service',
-  teamMember = '/team-member',
+  teamMember = 'team-member',
+  reviewAndRating = 'review-and-rating',
+  slots = 'slots',
+  booking = 'booking',
 }

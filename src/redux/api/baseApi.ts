@@ -17,5 +17,8 @@ export const baseApi = createApi({
     tagTypes.availableService,
     tagTypes.upcomingService,
     tagTypes.teamMember,
+    tagTypes.reviewAndRating,
+    tagTypes.slots,
+    tagTypes.booking,
   ],
 });
