@@ -16,7 +16,7 @@ function OurMisson() {
               </h2>
               <p className="flex-col text-[#808080] max-[479px]:text-sm">
                 {' '}
-                At House Crafters, our mission is to transcend the conventional
+                At Nest Shapers, our mission is to transcend the conventional
                 boundaries of house servicing. We aspire to be more than just a
                 service provider; we aim to be the architects of transformative
                 living experiences. Our mission begins with a commitment to

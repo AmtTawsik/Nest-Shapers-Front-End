@@ -1,8 +1,5 @@
 'use client';
 
-// import { sencondaryColor } from '@/constants/colors';
-// import { useUserLoginMutation } from '@/redux/api/authApi';
-// import { storeUserInfo } from '@/services/auth.service';
 import { genderOptions } from '@/constants/global';
 import { useUserRegisterMutation } from '@/redux/api/authApi';
 import { registerSchema } from '@/schemas/register';

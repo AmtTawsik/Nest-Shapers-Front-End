@@ -76,7 +76,7 @@ const Navbar = ({
                 'text-center text-hcGreen-base text-lg lg:text-2xl lg:text-left'
               }`}
             >
-              House<span className=" text-hcOrange-base">Crafters</span>
+              Nest<span className=" text-hcOrange-base">Shapers</span>
             </Title>
           </Link>
         </Content>
