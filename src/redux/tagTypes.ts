@@ -10,4 +10,8 @@ export enum tagTypes {
   reviewAndRating = 'review-and-rating',
   slots = 'slots',
   booking = 'booking',
+  feedback = 'feedback',
+  blog = 'blog',
+  faq = 'faq',
+  notification = 'notification',
 }

@@ -20,5 +20,9 @@ export const baseApi = createApi({
     tagTypes.reviewAndRating,
     tagTypes.slots,
     tagTypes.booking,
+    tagTypes.feedback,
+    tagTypes.blog,
+    tagTypes.faq,
+    tagTypes.notification,
   ],
 });
