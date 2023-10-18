@@ -20,6 +20,21 @@ export const availableServiceApi = baseApi.injectEndpoints({
       providesTags: [tagTypes.availableService],
     }),
 
+    remainingServices: build.query({
+      query: (arg: Record<string, any>) => ({
+        url: `${AVAILABLE_SERVICE}/remaining-service`,
+        method: 'GET',
+        params: arg,
+      }),
+      transformResponse: (response: any) => {
+        return {
+          availableServices: response.data,
+          meta: response.meta,
+        };
+      },
+      providesTags: [tagTypes.availableService],
+    }),
+
     addAvailableService: build.mutation({
       query: (data) => ({
         url: `${AVAILABLE_SERVICE}`,
@@ -66,4 +81,5 @@ export const {
   useAvailableServiceQuery,
   useUpdateAvailableServiceMutation,
   useDeleteAvailableServiceMutation,
+  useRemainingServicesQuery,
 } = availableServiceApi;

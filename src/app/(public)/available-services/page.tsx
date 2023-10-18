@@ -1,13 +1,91 @@
 'use client';
 
 import ServiceCard from '@/components/common/ServiceCard';
+import { useDebounced } from '@/hooks/useDebounced';
+import { useRemainingServicesQuery } from '@/redux/api/availableServiceApi';
+import { useServiceCategoriesQuery } from '@/redux/api/serviceCategoryApi';
+import { getTodaysDate } from '@/utils/getTodaysDate';
+import type { PaginationProps } from 'antd';
 import { Input, InputNumber, Pagination, Select, Space } from 'antd';
+import { useState } from 'react';
 
 const { Search } = Input;
 
 function AvailableServicePage() {
-  const onChange = (value: string) => {
-    console.log(`selected ${value}`);
+  const query: Record<string, any> = {};
+
+  const [page, setPage] = useState<number>(1);
+  const [size, setSize] = useState<number>(5);
+  const [sortBy, setSortBy] = useState<string>('');
+  const [sortOrder, setSortOrder] = useState<string>('');
+  const [minPrice, setMinPrice] = useState<number>(500);
+  const [maxPrice, setMaxPrice] = useState<number>(20000);
+  const [searchTerm, setSearchTerm] = useState<string>('');
+  const [categoryId, setCategoryId] = useState('');
+
+  query['limit'] = size;
+  query['page'] = page;
+  // query['sortBy'] = sortBy;
+  // query['sortOrder'] = sortOrder;
+  if (categoryId) {
+    query['categoryId'] = categoryId;
+  }
+  if (minPrice) {
+    query['minPrice'] = minPrice;
+  }
+  if (maxPrice) {
+    query['maxPrice'] = maxPrice;
+  }
+  query['date'] = getTodaysDate();
+
+  const debouncedTerm = useDebounced({
+    searchQuery: searchTerm,
+    delay: 600,
+  });
+
+  if (!!debouncedTerm) {
+    query['searchTerm'] = debouncedTerm;
+  }
+
+  const { data, isLoading } = useRemainingServicesQuery({ ...query });
+
+  const availableServices = data?.availableServices;
+  const meta = parseInt(data?.meta.total);
+
+  console.log(availableServices);
+  console.log(meta);
+
+  const { data: categoryData, isLoading: categoryLoadinding } =
+    useServiceCategoriesQuery({
+      limit: 100,
+      page: 1,
+    });
+  const categories = categoryData?.serviceCategories;
+  const categoryOptions = categories?.map((category: any) => {
+    return {
+      label: category?.categoryName,
+      value: category?.id,
+    };
+  });
+
+  console.log(categories);
+
+  const onCategoryChange = (value: string) => {
+    setCategoryId(value);
+  };
+
+  const onMInPriceChange = (value: number | string | null) => {
+    const v = Number(value);
+    setMinPrice(v);
+  };
+
+  const onMaxPriceChange = (value: number | string | null) => {
+    const v = Number(value);
+    setMaxPrice(v);
+  };
+
+  const onChange: PaginationProps['onChange'] = (pageNumber) => {
+    setPage(pageNumber);
   };
 
   return (
@@ -29,28 +107,18 @@ function AvailableServicePage() {
               placeholder="input service name"
               enterButton="Search"
               size="large"
-              // loading
+              onChange={(e) => {
+                setSearchTerm(e.target.value);
+              }}
+              loading={isLoading}
             />
             <Select
               showSearch
               placeholder="Select a category"
               optionFilterProp="children"
-              onChange={onChange}
+              onChange={onCategoryChange}
               size="large"
-              options={[
-                {
-                  value: 'jack',
-                  label: 'Jack',
-                },
-                {
-                  value: 'lucy',
-                  label: 'Lucy',
-                },
-                {
-                  value: 'tom',
-                  label: 'Tom',
-                },
-              ]}
+              options={categoryOptions}
             />
             <Space wrap>
               <span>Filter By Price:</span>
@@ -58,32 +126,26 @@ function AvailableServicePage() {
                 size="large"
                 min={500}
                 max={100000}
-                defaultValue={500}
-                placeholder="Min Pirce"
+                onChange={onMInPriceChange}
+                placeholder="Min Price"
               />
               <InputNumber
                 size="large"
                 min={500}
                 max={100000}
                 placeholder="Max Price"
+                onChange={onMaxPriceChange}
               />
             </Space>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 md:gap-4 lg:gap-6 justify-items-center sm:justify-items-stretch mb-6 md:mb-10 lg:mb-12">
-            <ServiceCard />
-            <ServiceCard />
-            <ServiceCard />
-            <ServiceCard />
-            <ServiceCard />
-            <ServiceCard />
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 md:gap-4 lg:gap-6 justify-items-center sm:justify-items-stretch mb-6 md:mb-10 lg:mb-12 align-items-start">
+            {/* @ts-ignore */}
+            {availableServices?.map((service: any) => (
+              <ServiceCard key={service.id} service={service} />
+            ))}
           </div>
           <div className="mt-6">
-            <Pagination
-              total={85}
-              showTotal={(total) => `Total ${total} items`}
-              defaultPageSize={20}
-              defaultCurrent={1}
-            />
+            <Pagination defaultCurrent={1} total={20} onChange={onChange} />
           </div>
         </div>
       </div>
