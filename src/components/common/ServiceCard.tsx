@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 function ServiceCard({ service }: any) {
   return (
@@ -25,12 +26,12 @@ function ServiceCard({ service }: any) {
           <p className="text-teal-700 font-bold">Price: {service?.price} BDT</p>
         </div>
         <div>
-          <a
+          <Link
             href={`/book-service/${service.id}`}
             className="flex-row flex max-w-full grid-cols-2 items-center justify-center bg-teal-700 py-4 text-center font-semibold text-white px-8"
           >
             <div className="mr-6 font-bold">Book Now</div>
-          </a>
+          </Link>
         </div>
       </div>
     </div>

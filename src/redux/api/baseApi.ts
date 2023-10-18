@@ -24,5 +24,7 @@ export const baseApi = createApi({
     tagTypes.blog,
     tagTypes.faq,
     tagTypes.notification,
+    'avService',
+    'rmService',
   ],
 });

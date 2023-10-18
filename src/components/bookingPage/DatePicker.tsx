@@ -1,15 +1,29 @@
 'use client';
 
-import type { Dayjs } from 'dayjs';
-
 import type { CalendarProps } from 'antd';
 import { Calendar } from 'antd';
+import { Dayjs } from 'dayjs';
+import { useState } from 'react';
 import Slots from './Slots';
 
+type pro = {
+  setDate: React.Dispatch<React.SetStateAction<string>>;
+  slots: any;
+  data: any;
+  date: string;
+};
+
 /* eslint-disable @next/next/no-img-element */
-function DatePicker() {
+// @ts-ignore
+function DatePicker({ setDate, slots, data, date, refetch }: pro) {
+  const [val, setval] = useState(date);
   const onPanelChange = (value: Dayjs, mode: CalendarProps<Dayjs>['mode']) => {
-    console.log(value.format('YYYY-MM-DD'), mode);
+    const res = value.format('YYYY-MM-DD');
+  };
+
+  const onSelect = (newValue: Dayjs) => {
+    refetch();
+    setDate(newValue.format('YYYY-MM-DD'));
   };
 
   return (
@@ -22,7 +36,11 @@ function DatePicker() {
             </h2>
             <div className="max-w-[480px] mb-6 md:mb-10 lg:mb-12 mx-auto">
               <div className="w-ful">
-                <Calendar fullscreen={false} onPanelChange={onPanelChange} />
+                <Calendar
+                  fullscreen={false}
+                  onPanelChange={onPanelChange}
+                  onSelect={onSelect}
+                />
               </div>
             </div>
           </div>
@@ -37,9 +55,11 @@ function DatePicker() {
       </div>
       <div className="mb-16">
         <h2 className="text-center mb-12 text-teal-700 text-2xl font-bold">
-          Available Slots
+          {slots?.length === 0
+            ? 'No slot is availavle for booking, please select another date'
+            : `Available Slots for your selected data: ${date}`}
         </h2>
-        <Slots />
+        <Slots slots={slots} data={data} date={date} />
       </div>
     </section>
   );

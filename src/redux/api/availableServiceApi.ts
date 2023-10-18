@@ -54,6 +54,15 @@ export const availableServiceApi = baseApi.injectEndpoints({
       providesTags: [tagTypes.availableService],
     }),
 
+    remainingService: build.query({
+      query: (data) => ({
+        url: `${AVAILABLE_SERVICE}/${data.id}/${data.date}`,
+        method: 'GET',
+      }),
+      //@ts-ignore
+      providesTags: (result, error, arg) => [{ type: 'avService', id: arg.id }],
+    }),
+
     // update single by id
     updateAvailableService: build.mutation({
       query: (data) => ({
@@ -82,4 +91,5 @@ export const {
   useUpdateAvailableServiceMutation,
   useDeleteAvailableServiceMutation,
   useRemainingServicesQuery,
+  useRemainingServiceQuery,
 } = availableServiceApi;

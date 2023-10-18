@@ -1,6 +1,7 @@
 'use client';
 
 import ServiceCard from '@/components/common/ServiceCard';
+import HCLoading from '@/components/ui/Loading/HCLoading';
 import { useDebounced } from '@/hooks/useDebounced';
 import { useRemainingServicesQuery } from '@/redux/api/availableServiceApi';
 import { useServiceCategoriesQuery } from '@/redux/api/serviceCategoryApi';
@@ -16,12 +17,12 @@ function AvailableServicePage() {
 
   const [page, setPage] = useState<number>(1);
   const [size, setSize] = useState<number>(5);
-  const [sortBy, setSortBy] = useState<string>('');
-  const [sortOrder, setSortOrder] = useState<string>('');
-  const [minPrice, setMinPrice] = useState<number>(500);
-  const [maxPrice, setMaxPrice] = useState<number>(20000);
+
+  const [minPrice, setMinPrice] = useState<string | number>('');
+  const [maxPrice, setMaxPrice] = useState<string | number>('');
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [categoryId, setCategoryId] = useState('');
+  const [reset, setReset] = useState('');
 
   query['limit'] = size;
   query['page'] = page;
@@ -49,11 +50,11 @@ function AvailableServicePage() {
 
   const { data, isLoading } = useRemainingServicesQuery({ ...query });
 
-  const availableServices = data?.availableServices;
+  const availableServices = data?.availableServices.filter(
+    // @ts-ignore
+    (service): any => service.isAvailable === true
+  );
   const meta = parseInt(data?.meta.total);
-
-  console.log(availableServices);
-  console.log(meta);
 
   const { data: categoryData, isLoading: categoryLoadinding } =
     useServiceCategoriesQuery({
@@ -67,8 +68,6 @@ function AvailableServicePage() {
       value: category?.id,
     };
   });
-
-  console.log(categories);
 
   const onCategoryChange = (value: string) => {
     setCategoryId(value);
@@ -87,6 +86,19 @@ function AvailableServicePage() {
   const onChange: PaginationProps['onChange'] = (pageNumber) => {
     setPage(pageNumber);
   };
+
+  // const resetFilters = () => {
+  //   delete query.searchTerm;
+  //   delete query.categoryId;
+  //   delete query.minPrice;
+  //   delete query.maxPrice;
+
+  //   setReset('reset');
+  // };
+
+  if (isLoading) {
+    return <HCLoading />;
+  }
 
   return (
     <div className="bg-white">
@@ -110,7 +122,6 @@ function AvailableServicePage() {
               onChange={(e) => {
                 setSearchTerm(e.target.value);
               }}
-              loading={isLoading}
             />
             <Select
               showSearch
@@ -124,19 +135,24 @@ function AvailableServicePage() {
               <span>Filter By Price:</span>
               <InputNumber
                 size="large"
-                min={500}
-                max={100000}
                 onChange={onMInPriceChange}
                 placeholder="Min Price"
               />
               <InputNumber
                 size="large"
-                min={500}
-                max={100000}
                 placeholder="Max Price"
                 onChange={onMaxPriceChange}
               />
             </Space>
+            {/* <Button
+              onClick={resetFilters}
+              type="primary"
+              style={{ margin: '0px 5px' }}
+              className=" bg-teal-700 flex items-center max-w-[80px]"
+            >
+              Reset
+              <ReloadOutlined />
+            </Button> */}
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 md:gap-4 lg:gap-6 justify-items-center sm:justify-items-stretch mb-6 md:mb-10 lg:mb-12 align-items-start">
             {/* @ts-ignore */}
