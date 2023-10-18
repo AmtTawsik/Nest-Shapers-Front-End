@@ -14,7 +14,9 @@ const ActionBar = ({ title, children }: ActionBarProps) => {
         marginBottom: '20px',
       }}
     >
-      <h1>{title}</h1>
+      <h1 className="text-3xl text-teal-700 font-bold text-center mb-12">
+        {title}
+      </h1>
       <div
         style={{
           display: 'flex',

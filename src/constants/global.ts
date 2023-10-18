@@ -13,4 +13,15 @@ export const genderOptions = [
   },
 ];
 
+export const booleanOptions = [
+  {
+    label: 'True',
+    value: 'true',
+  },
+  {
+    label: 'False',
+    value: 'false',
+  },
+];
+
 export const authKey = 'accessToken';

@@ -27,9 +27,18 @@ const HCModal = ({
       onOk={handleOk}
       onCancel={closeModal}
       cancelButtonProps={{
-        style: { display: showCancelButton ? 'inline' : 'none' },
+        style: {
+          display: showCancelButton ? 'inline' : 'none',
+          backgroundColor: '#0f766e',
+          color: 'white',
+        },
       }}
-      okButtonProps={{ style: { display: showOkButton ? 'inline' : 'none' } }}
+      okButtonProps={{
+        style: {
+          display: showOkButton ? 'inline' : 'none',
+          backgroundColor: '#dc2626',
+        },
+      }}
     >
       {children}
     </Modal>

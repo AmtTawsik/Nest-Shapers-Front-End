@@ -4,21 +4,21 @@ import ActionBar from '@/components/ui/ActionBar/ActionBar';
 import Form from '@/components/ui/Form/Form';
 import { Button, Col, Row, message } from 'antd';
 
-import AvailableServiceField from '@/components/ui/Form/AvailableServiceField';
-import FormTimePicker from '@/components/ui/Form/FormTimePicker';
-import ServiceTeamField from '@/components/ui/Form/ServiceTeamField';
 import { useAddSlotMutation } from '@/redux/api/slotsApi';
-import { responseMessage } from '@/utils/responseMessage';
+import FormTimePicker from '../ui/Form/FormTimePicker';
+import ServiceTeamField from '../ui/Form/ServiceTeamField';
 
-const CreateSlotPage = () => {
+const CreateSlot = ({ availableServiceId }: { availableServiceId: string }) => {
   const [addSlot, { isLoading: slotLoading }] = useAddSlotMutation();
 
   const onSubmit = async (data: any) => {
     message.loading('Creating.....');
     try {
-      const res = await addSlot(data);
+      console.log({ ...data, availableServiceId: availableServiceId });
 
-      responseMessage(res, 'Slot created Successfully');
+      //   const res = await addSlot(updatedData);
+
+      //responseMessage(res, 'Slot created Successfully');
     } catch (err: any) {
       console.log(err);
 
@@ -28,19 +28,11 @@ const CreateSlotPage = () => {
 
   return (
     <div className="px-12 py-6">
-      <ActionBar title="Create Slot for available Service"></ActionBar>
+      <ActionBar title="Create Slot for this service Service"></ActionBar>
       <Form submitHandler={onSubmit}>
         <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
           <Col span={8} style={{ margin: '10px 0' }}>
             <FormTimePicker name="startTime" label="Start time" />
-          </Col>
-        </Row>
-        <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
-          <Col span={8} style={{ margin: '10px 0' }}>
-            <AvailableServiceField
-              name="availableServiceId"
-              label="Select Service"
-            />
           </Col>
         </Row>
         <Row gutter={{ xs: 24, xl: 8, lg: 8, md: 24 }}>
@@ -65,4 +57,4 @@ const CreateSlotPage = () => {
   );
 };
 
-export default CreateSlotPage;
+export default CreateSlot;

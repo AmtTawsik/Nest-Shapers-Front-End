@@ -4,7 +4,7 @@ import { getErrorMessageByPropertyName } from '@/utils/schema-validator';
 import { Select } from 'antd';
 import { Controller, useFormContext } from 'react-hook-form';
 
-type SelectOptions = {
+export type SelectOptions = {
   label: string;
   value: string;
 };

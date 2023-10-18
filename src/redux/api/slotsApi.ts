@@ -31,7 +31,7 @@ export const slotApi = baseApi.injectEndpoints({
     }),
 
     // get single by id
-    slot: build.query({
+    getSlot: build.query({
       query: (id) => ({
         url: `${SLOTS}/${id}`,
         method: 'GET',
@@ -65,5 +65,5 @@ export const {
   useDeleteSlotMutation,
   useSlotsQuery,
   useUpdateSlotMutation,
-  useSlotQuery,
+  useGetSlotQuery,
 } = slotApi;
