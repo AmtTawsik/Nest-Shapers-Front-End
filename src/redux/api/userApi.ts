@@ -20,6 +20,16 @@ export const usersApi = baseApi.injectEndpoints({
       providesTags: [tagTypes.user],
     }),
 
+    addUser: build.mutation({
+      query: (data) => ({
+        url: '/auth/signup',
+        method: 'POST',
+        data,
+      }),
+
+      invalidatesTags: [tagTypes.user],
+    }),
+
     teamMembers: build.query({
       query: (arg: Record<string, any>) => ({
         url: `${USERS}/team-member`,
@@ -71,4 +81,5 @@ export const {
   useUpdateUserMutation,
   useUsersQuery,
   useUserQuery,
+  useAddUserMutation,
 } = usersApi;

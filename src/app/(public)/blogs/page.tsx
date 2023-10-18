@@ -1,9 +1,9 @@
-function BlogPage() {
+function Blogs() {
   return (
     <div>
-      <h1>This is a blog page</h1>
+      <h1>This is blogs page</h1>
     </div>
   );
 }
 
-export default BlogPage;
+export default Blogs;
