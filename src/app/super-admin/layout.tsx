@@ -1,6 +1,7 @@
+'use client';
+
 import HCLoading from '@/components/ui/Loading/HCLoading';
 import SuperAdminHeader from '@/components/view/headers/SuperAdminHeader';
-('use client');
 
 import SuperAdminSidebar from '@/components/view/sidebars/SuperAdminSidebar';
 import { authKey } from '@/constants/global';

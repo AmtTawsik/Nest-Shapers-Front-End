@@ -10,9 +10,8 @@ import { registerSchema } from '@/schemas/register';
 import { responseMessage } from '@/utils/responseMessage';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { Button, Col, Row, message } from 'antd';
-import HCBreadCrumbs from '../../../../components/ui/BreadCrumbs/HCBreadCrumb';
 
-const CreateServicePage = () => {
+const CreateUserPage = () => {
   const [addUser, { isLoading }] = useAddUserMutation();
 
   const onSubmit = async (data: any) => {
@@ -27,12 +26,9 @@ const CreateServicePage = () => {
       message.error(err.message || 'Something went wrong try again');
     }
   };
-  const base = 'admin';
+
   return (
     <div className="px-12 py-6">
-      <HCBreadCrumbs
-        items={[{ label: 'Users List', link: `/${base}/users` }]}
-      />
       <h1 className="mt-8 text-teal-950 text-2xl font-bold mb-6">
         Create User
       </h1>
@@ -126,4 +122,4 @@ const CreateServicePage = () => {
   );
 };
 
-export default CreateServicePage;
+export default CreateUserPage;

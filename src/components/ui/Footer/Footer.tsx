@@ -5,7 +5,7 @@ function Footer() {
       <div className="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-16 lg:py-16">
         <div className="flex flex-col items-center">
           <a href="#" className="text-white text-4xl font-bold">
-          Nest <span className="text-hcOrange-base">Shapers</span>
+            Nest <span className="text-hcOrange-base">Shapers</span>
           </a>
           <p className="mx-auto mt-4 max-w-[528px] text-center text-[#636262]">
             Lorem ipsum dolor sit amet consectetur adipiscing elit ut

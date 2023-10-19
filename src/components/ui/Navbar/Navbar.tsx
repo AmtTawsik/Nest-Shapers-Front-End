@@ -98,16 +98,21 @@ const Navbar = ({
           {isUserLoggedIn ? (
             <>
               {role === 'customer' && (
-                <Button
-                  type="primary"
-                  size="large"
-                  onClick={() => {
-                    router.push('/dashboard');
-                  }}
-                  className="ml-6 bg-teal-700 px-6"
-                >
-                  Dashboard
-                </Button>
+                <>
+                  <Menu.Item key="/feedback">
+                    <Link href="/feedback">Feedback & Faq</Link>
+                  </Menu.Item>
+                  <Button
+                    type="primary"
+                    size="large"
+                    onClick={() => {
+                      router.push('/dashboard');
+                    }}
+                    className="ml-6 bg-teal-700 px-6"
+                  >
+                    Dashboard
+                  </Button>
+                </>
               )}
               <Button
                 size="large"

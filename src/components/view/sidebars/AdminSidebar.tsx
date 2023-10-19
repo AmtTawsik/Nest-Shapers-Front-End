@@ -10,11 +10,11 @@ const AdminSidebar = ({ children }: { children: React.ReactNode }) => {
     { key: '6', label: 'Available Service', href: '/admin/available-service' },
     { key: '10', label: 'Slots for Services', href: '/admin/slot' },
     { key: '7', label: 'Upcoming Service', href: '/admin/upcoming-service' },
-    { key: '11', label: 'Specialization', href: '/admin/specialization' },
+    // { key: '11', label: 'Specialization', href: '/admin/specialization' },
     { key: '8', label: 'Service Team', href: '/admin/ServiceTeam' },
-    { key: '9', label: 'Team Members', href: '/admin/team-member' },
+    // { key: '9', label: 'Team Members', href: '/admin/team-member' },
 
-    { key: '12', label: 'User Notification', href: '/admin/user-notification' },
+    // { key: '12', label: 'User Notification', href: '/admin/user-notification' },
     // {
     //   key: '13',
     //   label: 'Team Notification',

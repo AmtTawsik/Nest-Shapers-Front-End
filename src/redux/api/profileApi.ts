@@ -6,10 +6,9 @@ const PROFILE = '/profile';
 export const profileApi = baseApi.injectEndpoints({
   endpoints: (build) => ({
     profile: build.query({
-      query: (arg: Record<string, any>) => ({
+      query: () => ({
         url: PROFILE,
         method: 'GET',
-        params: arg,
       }),
       transformResponse: (response: any) => {
         return {
@@ -23,7 +22,7 @@ export const profileApi = baseApi.injectEndpoints({
     // update single by id
     updateProfile: build.mutation({
       query: (data) => ({
-        url: `${PROFILE}/update}`,
+        url: '/profile/update',
         method: 'PATCH',
         data: data.body,
       }),
