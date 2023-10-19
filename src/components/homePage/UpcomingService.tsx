@@ -1,6 +1,7 @@
 import UpcomingServiceCard from '../common/UpcomingServiceCard';
 
-function UpcomingService() {
+// @ts-ignore
+function UpcomingService({ upcomingServices }) {
   return (
     <div>
       <section>
@@ -19,9 +20,10 @@ function UpcomingService() {
             </div>
 
             <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-              <UpcomingServiceCard />
-              <UpcomingServiceCard />
-              <UpcomingServiceCard />
+              {/* @ts-ignore */}
+              {upcomingServices?.map((service) => (
+                <UpcomingServiceCard key={service?.id} service={service} />
+              ))}
             </div>
           </div>
         </div>

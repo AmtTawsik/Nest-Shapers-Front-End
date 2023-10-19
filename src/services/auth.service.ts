@@ -25,7 +25,9 @@ export const isLoggedIn = () => {
 };
 
 export const removeUserInfo = (key: string) => {
-  return localStorage.removeItem(key);
+  if (typeof window !== 'undefined') {
+    return localStorage.removeItem(key);
+  }
 };
 
 export const getNewAccessToken = async () => {

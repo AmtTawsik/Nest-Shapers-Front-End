@@ -1,4 +1,5 @@
 import { Carousel } from 'antd';
+import Link from 'next/link';
 import './Banner.css';
 
 const HomeBanner = () => (
@@ -10,9 +11,12 @@ const HomeBanner = () => (
           Transform your outdoor space with our expert gardening services and
           thoughtful landscape designs.
         </h1>
-        <button className="px-8 py-4 rounded-md text-white text-lg bg-hcOrange-base">
+        <Link
+          href="/available-services"
+          className="px-8 py-4 rounded-md text-white text-lg bg-hcOrange-base"
+        >
           Our Services
-        </button>
+        </Link>
       </div>
     </section>
     <section className="banner banner-two">
@@ -22,9 +26,12 @@ const HomeBanner = () => (
           Trust our roofing expertise to secure your home with durable solutions
           and peace of mind.
         </h1>
-        <button className="px-8 py-4 rounded-md text-white text-lg bg-hcOrange-base">
+        <Link
+          href="/available-services"
+          className="px-8 py-4 rounded-md text-white text-lg bg-hcOrange-base"
+        >
           Our Services
-        </button>
+        </Link>
       </div>
     </section>
     <section className="banner banner-three">
@@ -34,9 +41,12 @@ const HomeBanner = () => (
           Experience the magic of a pristine home through our thorough cleaning
           services
         </h1>
-        <button className="px-8 py-4 rounded-md text-white text-lg bg-hcOrange-base">
+        <Link
+          href="/available-services"
+          className="px-8 py-4 rounded-md text-white text-lg bg-hcOrange-base"
+        >
           Our Services
-        </button>
+        </Link>
       </div>
     </section>
   </Carousel>

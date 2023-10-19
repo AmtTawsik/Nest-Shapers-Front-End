@@ -1,6 +1,7 @@
 import CategoryCard from '../common/CategoryCard';
 
-function Categories() {
+// @ts-ignore
+function Categories({ categories }) {
   return (
     <section className="block">
       <div className="py-24 md:py-24 lg:pb-32 lg:pt-32 mx-auto w-full max-w-7xl px-5 md:px-10">
@@ -16,12 +17,10 @@ function Categories() {
             </div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 md:gap-4 lg:gap-6 justify-items-center sm:justify-items-stretch mb-6 md:mb-10 lg:mb-12">
-            <CategoryCard />
-            <CategoryCard />
-            <CategoryCard />
-            <CategoryCard />
-            <CategoryCard />
-            <CategoryCard />
+            {/* @ts-ignore */}
+            {categories?.map((category) => (
+              <CategoryCard key={category?.id} category={category} />
+            ))}
           </div>
         </div>
       </div>

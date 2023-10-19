@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 function Overview() {
   return (
@@ -24,12 +25,12 @@ function Overview() {
                 </p>
               </div>
               <div className="flex items-stretch justify-center">
-                <a
-                  href="#"
-                  className="inline-block items-center bg-hcOrange-base px-8 py-4 text-center font-semibold text-white mr-5 md:mr-6 lg:mr-8"
+                <Link
+                  href="/available-services"
+                  className="px-8 py-4 rounded-md text-white text-lg bg-hcOrange-base"
                 >
                   Our Services
-                </a>
+                </Link>
               </div>
             </div>
           </div>

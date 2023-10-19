@@ -55,7 +55,7 @@ function Slots({ slots, data: serviceData, date }: props) {
   };
 
   return (
-    <div className="flex flex-col md:flex-row flex-wrap justify-center mx-auto gap-4">
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 justify-center mx-auto gap-4">
       {slots?.map((slot: any) => (
         <div
           key={slot?.id}
@@ -78,7 +78,7 @@ function Slots({ slots, data: serviceData, date }: props) {
               disabled
               className="text-white bg-teal-700 px-16 py-2 mt-2 rounded-md"
             >
-              For Booking Please Login first
+              Login first
             </button>
           )}
         </div>

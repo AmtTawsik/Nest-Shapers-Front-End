@@ -12,6 +12,7 @@ import {
 } from '@/redux/api/availableServiceApi';
 import { responseMessage } from '@/utils/responseMessage';
 import { Button, Col, Row, message } from 'antd';
+import { revalidateTag } from 'next/cache';
 
 type IDProps = {
   params: any;
@@ -40,6 +41,7 @@ const AvailableServiceUpdatePage = ({ params }: IDProps) => {
 
       //   console.log(data);
       const res = await updateAvailableService({ id, body: updatedData });
+      revalidateTag('availableServices');
       responseMessage(res, 'Service updated successfully');
     } catch (err: any) {
       //   console.error(err.message);

@@ -13,6 +13,7 @@ import {
 
 import { responseMessage } from '@/utils/responseMessage';
 import { Button, Col, Row, message } from 'antd';
+import { revalidateTag } from 'next/cache';
 
 type IDProps = {
   params: any;
@@ -39,6 +40,7 @@ const UpcomingServiceUpdatePage = ({ params }: IDProps) => {
 
       //   console.log(data);
       const res = await updateUpcomingService({ id, body: updatedData });
+      revalidateTag('upcomingServices');
       responseMessage(res, 'Service updated successfully');
     } catch (err: any) {
       //   console.error(err.message);

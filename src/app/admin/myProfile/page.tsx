@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+
 'use client';
 
 import Form from '@/components/ui/Form/Form';
@@ -18,8 +20,6 @@ function MyProfilePage() {
   const profileData = data?.profileData;
   const [updateProfile, { isLoading: updateLoading }] =
     useUpdateProfileMutation();
-
-  console.log(data);
 
   const onSubmit = async (values: any) => {
     if (isLoading) {
@@ -52,7 +52,11 @@ function MyProfilePage() {
           Welcome to your profile {profileData?.fullName}
         </h1>
         <div className="w-[150px] h-[150px] bg-teal-500 mx-auto mt-4">
-          Profile image
+          <img
+            src={profileData?.profileImageUrl}
+            alt="avatar"
+            className="w-[150px] h-[150px]"
+          />
         </div>
       </div>
       <div className="px-12 py-6"></div>

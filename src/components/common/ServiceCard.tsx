@@ -1,14 +1,14 @@
-import Image from 'next/image';
+/* eslint-disable @next/next/no-img-element */
 import Link from 'next/link';
 
 function ServiceCard({ service }: any) {
   return (
     <div>
-      <div className="flex-col flex max-w-full grid-cols-1 gap-4 border border-solid border-[#dfdfdf] bg-white p-0 text-black max-[991px]:text-left max-[767px]:items-center max-[767px]:px-4 max-[767px]:py-8 max-[479px]:w-full rounded-md">
-        <Image
+      <div className="flex-col flex max-w-full grid-cols-1 gap-4 border border-solid border-[#dfdfdf] bg-white p-0 text-black max-[991px]:text-left max-[767px]:items-center max-[767px]:px-4 max-[767px]:py-8 max-[479px]:w-full rounded-md h-[500px]">
+        <img
           width={400}
           height={300}
-          src="https://i.ibb.co/fGj7yPj/pexels-greta-hoffman-7728943.jpg"
+          src={service?.service?.imageUrl}
           alt=""
           className="inline-block w-full object-cover h-60"
         />
@@ -25,7 +25,7 @@ function ServiceCard({ service }: any) {
 
           <p className="text-teal-700 font-bold">Price: {service?.price} BDT</p>
         </div>
-        <div>
+        <div className="mt-auto">
           <Link
             href={`/book-service/${service?.id}`}
             className="flex-row flex max-w-full grid-cols-2 items-center justify-center bg-teal-700 py-4 text-center font-semibold text-white px-8"

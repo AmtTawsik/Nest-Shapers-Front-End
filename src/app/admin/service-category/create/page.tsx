@@ -5,6 +5,7 @@ import FormInput from '@/components/ui/Form/FormInput';
 import { useAddServiceCategoryMutation } from '@/redux/api/serviceCategoryApi';
 import { responseMessage } from '@/utils/responseMessage';
 import { Button, Col, Row, message } from 'antd';
+import { revalidateTag } from 'next/cache';
 import HCBreadCrumbs from '../../../../components/ui/BreadCrumbs/HCBreadCrumb';
 
 const CreateCategoryPage = () => {
@@ -14,7 +15,7 @@ const CreateCategoryPage = () => {
     message.loading('Creating.....');
     try {
       const res = await addServiceCategory(data);
-
+      revalidateTag('categories');
       responseMessage(res, 'Service Added Successfully');
     } catch (err: any) {
       console.log(err);

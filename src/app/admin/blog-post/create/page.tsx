@@ -2,8 +2,8 @@
 
 import Form from '@/components/ui/Form/Form';
 import FormInput from '@/components/ui/Form/FormInput';
-
 import ServiceCategoryField from '@/components/ui/Form/ServiceCategoryField';
+import { revalidateTag } from 'next/cache';
 
 import { useAddBlogMutation } from '@/redux/api/blogApi';
 import { responseMessage } from '@/utils/responseMessage';
@@ -17,7 +17,7 @@ const CreateBlogPage = () => {
     message.loading('Creating.....');
     try {
       const res = await addBlog(data);
-
+      revalidateTag('blogs');
       responseMessage(res, 'Blog Added Successfully');
     } catch (err: any) {
       console.log(err);

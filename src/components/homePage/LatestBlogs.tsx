@@ -1,6 +1,7 @@
 import BlogCard from '../common/BlogCard';
 
-function LatestBlogs() {
+// @ts-ignore
+function LatestBlogs({ blogs }) {
   return (
     <div className="bg-teal-50">
       <section className="block">
@@ -18,9 +19,10 @@ function LatestBlogs() {
               </div>
             </div>
             <div className="grid w-full grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 md:gap-4 lg:gap-6 justify-items-center sm:justify-items-stretch mb-8 md:mb-12 lg:mb-16">
-              <BlogCard />
-              <BlogCard />
-              <BlogCard />
+              {/* @ts-ignore */}
+              {blogs?.map((blog) => (
+                <BlogCard key={blog?.id} blog={blog} />
+              ))}
             </div>
             <a
               href="#"

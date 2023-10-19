@@ -6,9 +6,9 @@ import Form from '@/components/ui/Form/Form';
 import FormInput from '@/components/ui/Form/FormInput';
 import ServiceCategoryField from '@/components/ui/Form/ServiceCategoryField';
 import { useBlogQuery, useUpdateBlogMutation } from '@/redux/api/blogApi';
-
 import { responseMessage } from '@/utils/responseMessage';
 import { Button, Col, Row, message } from 'antd';
+import { revalidateTag } from 'next/cache';
 
 type IDProps = {
   params: any;
@@ -27,6 +27,7 @@ const UpdateBlogPage = ({ params }: IDProps) => {
     try {
       //   console.log(data);
       const res = await updateBlog({ id, body: values });
+      revalidateTag('blogs');
       responseMessage(res, 'Blog updated successfully');
     } catch (err: any) {
       //   console.error(err.message);

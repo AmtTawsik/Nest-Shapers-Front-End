@@ -1,20 +1,26 @@
-import Image from 'next/image';
+/* eslint-disable @next/next/no-img-element */
+import Link from 'next/link';
 
-function CategoryCard() {
+// @ts-ignore
+function CategoryCard({ category }) {
   return (
     <div>
       <div className="relative flex max-w-full flex-col items-center justify-center object-cover text-black">
-        <Image
+        <img
           width={300}
           height={300}
-          src="https://i.ibb.co/fGj7yPj/pexels-greta-hoffman-7728943.jpg"
+          src={category?.categoryImage}
           alt=""
           className="inline-block h-[300px] w-full object-cover"
         />
-        <div className="absolute flex flex-col items-center justify-center bg-white px-8 py-4 text-center rounded-sm">
-          <p className="font-medium text-sm sm:text-xl">Project Name</p>
-          <p className="max-[479px]:text-sm">Microsoft</p>
-        </div>
+        <Link
+          href={`/category/${category?.id}`}
+          className="absolute flex flex-col items-center justify-center bg-white px-8 py-4 text-center rounded-sm"
+        >
+          <p className="font-medium text-sm sm:text-xl">
+            {category?.categoryName}
+          </p>
+        </Link>
       </div>
     </div>
   );

@@ -8,6 +8,7 @@ import { booleanOptions } from '@/constants/global';
 import { useAddUpcomingServiceMutation } from '@/redux/api/upcomingServiceApi';
 import { responseMessage } from '@/utils/responseMessage';
 import { Button, Col, Row, message } from 'antd';
+import { revalidateTag } from 'next/cache';
 import HCBreadCrumbs from '../../../../components/ui/BreadCrumbs/HCBreadCrumb';
 
 const CreateUpcomingServicePage = () => {
@@ -24,7 +25,7 @@ const CreateUpcomingServicePage = () => {
       };
 
       const res = await addUpcomingService(updatedData);
-
+      revalidateTag('upcomingServices');
       responseMessage(res, 'Upcoming service created Successfully');
     } catch (err: any) {
       console.log(err);

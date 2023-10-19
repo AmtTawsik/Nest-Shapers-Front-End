@@ -3,7 +3,7 @@
 import ServiceCard from '@/components/common/ServiceCard';
 import HCLoading from '@/components/ui/Loading/HCLoading';
 import { useDebounced } from '@/hooks/useDebounced';
-import { useRemainingServicesQuery } from '@/redux/api/availableServiceApi';
+import { useAvailableServicesQuery } from '@/redux/api/availableServiceApi';
 import { useServiceCategoriesQuery } from '@/redux/api/serviceCategoryApi';
 import { getTodaysDate } from '@/utils/getTodaysDate';
 import type { PaginationProps } from 'antd';
@@ -16,7 +16,7 @@ function AvailableServicePage() {
   const query: Record<string, any> = {};
 
   const [page, setPage] = useState<number>(1);
-  const [size, setSize] = useState<number>(5);
+  const [size, setSize] = useState<number>(10);
 
   const [minPrice, setMinPrice] = useState<string | number>('');
   const [maxPrice, setMaxPrice] = useState<string | number>('');
@@ -48,7 +48,7 @@ function AvailableServicePage() {
     query['searchTerm'] = debouncedTerm;
   }
 
-  const { data, isLoading } = useRemainingServicesQuery({ ...query });
+  const { data, isLoading } = useAvailableServicesQuery({ ...query });
 
   const availableServices = data?.availableServices.filter(
     // @ts-ignore
