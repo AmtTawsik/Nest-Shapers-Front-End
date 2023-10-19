@@ -9,7 +9,7 @@ import { useAddAvailableServiceMutation } from '@/redux/api/availableServiceApi'
 import { useAddSlotMutation } from '@/redux/api/slotsApi';
 import { responseMessage } from '@/utils/responseMessage';
 import { Button, Col, Row, message } from 'antd';
-import { revalidateTag } from 'next/cache';
+
 import HCBreadCrumbs from '../../../../components/ui/BreadCrumbs/HCBreadCrumb';
 
 const CreateAvailableServicePage = () => {
@@ -29,7 +29,7 @@ const CreateAvailableServicePage = () => {
       };
 
       const res = await addAvailableService(updatedData);
-      revalidateTag('availableServices');
+
       responseMessage(res, 'Available service created Successfully');
     } catch (err: any) {
       console.log(err);

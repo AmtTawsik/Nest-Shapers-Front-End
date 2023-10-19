@@ -1,4 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
+
+import Link from 'next/link';
+
 /* eslint-disable @next/next/no-img-element */
 function AboutUsSection() {
   return (
@@ -29,12 +32,12 @@ function AboutUsSection() {
               </p>
             </div>
             <div className="flex items-center justify-start gap-4 flex-wrap">
-              <a
-                href="#"
+              <Link
+                href="/available-services"
                 className="inline-block items-center bg-teal-700 px-6 py-3 text-center font-semibold text-white"
               >
                 Our Services
-              </a>
+              </Link>
             </div>
           </div>
 

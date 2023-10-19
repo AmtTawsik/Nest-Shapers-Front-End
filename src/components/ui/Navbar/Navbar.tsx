@@ -114,6 +114,34 @@ const Navbar = ({
                   </Button>
                 </>
               )}
+              {role === 'admin' && (
+                <>
+                  <Button
+                    type="primary"
+                    size="large"
+                    onClick={() => {
+                      router.push('/admin/dashboard');
+                    }}
+                    className="ml-6 bg-teal-700 px-6"
+                  >
+                    Dashboard
+                  </Button>
+                </>
+              )}
+              {role === 'super_admin' && (
+                <>
+                  <Button
+                    type="primary"
+                    size="large"
+                    onClick={() => {
+                      router.push('/super-admin/dashboard');
+                    }}
+                    className="ml-6 bg-teal-700 px-6"
+                  >
+                    Dashboard
+                  </Button>
+                </>
+              )}
               <Button
                 size="large"
                 type="primary"

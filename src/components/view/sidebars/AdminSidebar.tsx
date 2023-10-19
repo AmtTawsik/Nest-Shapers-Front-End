@@ -30,7 +30,7 @@ const AdminSidebar = ({ children }: { children: React.ReactNode }) => {
     // { key: '21', label: 'Website Content', href: '/admin/website-content' },
     // { key: '22', label: 'Website Banners', href: '/admin/website-banner' },
     // { key: '23', label: 'Work Showcase', href: '/admin/work-showcase' },
-    { key: '24', label: 'My Profile', href: '/admin/my-profile' },
+    { key: '24', label: 'My Profile', href: '/admin/myProfile' },
   ];
   return <Sidebar items={items}>{children}</Sidebar>;
 };

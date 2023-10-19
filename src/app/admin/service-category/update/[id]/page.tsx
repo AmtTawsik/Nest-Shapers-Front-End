@@ -10,7 +10,6 @@ import {
 } from '@/redux/api/serviceCategoryApi';
 import { responseMessage } from '@/utils/responseMessage';
 import { Button, Col, Row, message } from 'antd';
-import { revalidateTag } from 'next/cache';
 
 type IDProps = {
   params: any;
@@ -30,7 +29,7 @@ const ServiceCategoryUpdatePage = ({ params }: IDProps) => {
     try {
       //   console.log(data);
       const res = await updateServiceCategory({ id, body: values });
-      revalidateTag('categories');
+
       responseMessage(res, 'Category updated successfully');
     } catch (err: any) {
       //   console.error(err.message);

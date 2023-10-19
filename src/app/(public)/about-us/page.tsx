@@ -1,7 +1,6 @@
 import AboutUsSection from '@/components/aboutUsPage/AboutUsSection';
 import OurGoals from '@/components/aboutUsPage/OurGoals';
 import OurMisson from '@/components/aboutUsPage/OurMisson';
-import TeamMember from '@/components/aboutUsPage/TeamMember';
 
 function AboutUsPage() {
   return (
@@ -9,7 +8,7 @@ function AboutUsPage() {
       <AboutUsSection />
       <OurMisson />
       <OurGoals />
-      <TeamMember />
+      {/* <TeamMember /> */}
     </div>
   );
 }

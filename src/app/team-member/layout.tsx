@@ -4,6 +4,7 @@ import HCLoading from '@/components/ui/Loading/HCLoading';
 import TeamMemberHeader from '@/components/view/headers/TeamMemberHeader';
 import { getUserInfo, isLoggedIn } from '@/services/auth.service';
 import { IChildrenNode } from '@/types';
+import dynamic from 'next/dynamic';
 import { useRouter } from 'next/navigation';
 
 import { useEffect, useState } from 'react';
@@ -36,4 +37,6 @@ function TeamMemberLayoutPage({ children }: IChildrenNode) {
   );
 }
 
-export default TeamMemberLayoutPage;
+export default dynamic(() => Promise.resolve(TeamMemberLayoutPage), {
+  ssr: false,
+});

@@ -9,6 +9,7 @@ import {
   removeUserInfo,
 } from '@/services/auth.service';
 import { IChildrenNode } from '@/types';
+import dynamic from 'next/dynamic';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import CustomerHeader from '../../components/view/headers/CustomerHeader';
@@ -46,4 +47,4 @@ function CustomerLayout({ children }: IChildrenNode) {
   );
 }
 
-export default CustomerLayout;
+export default dynamic(() => Promise.resolve(CustomerLayout), { ssr: false });

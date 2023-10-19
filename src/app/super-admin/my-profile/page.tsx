@@ -4,6 +4,7 @@
 import Form from '@/components/ui/Form/Form';
 import FormInput from '@/components/ui/Form/FormInput';
 import FormSelectField from '@/components/ui/Form/FormSelectField';
+import HCLoading from '@/components/ui/Loading/HCLoading';
 import { genderOptions } from '@/constants/global';
 import {
   useProfileQuery,
@@ -21,7 +22,7 @@ function SuperAdminMyProfilePage() {
     useUpdateProfileMutation();
 
   const onSubmit = async (values: any) => {
-    if (isLoading) {
+    if (updateLoading) {
       message.loading('Updating.....');
     }
     try {
@@ -44,6 +45,10 @@ function SuperAdminMyProfilePage() {
     profileImageUrl: profileData?.profileImageUrl || '',
     address: profileData?.address || '',
   };
+
+  if (isLoading) {
+    return <HCLoading />;
+  }
   return (
     <div>
       <div className="text-center text-4xl text-teal-700 mt-4">

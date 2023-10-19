@@ -1,26 +1,27 @@
 'use client';
 
-import { daysOptions } from '@/constants/global';
-import { Button, Col, Empty, Row } from 'antd';
-import { useFieldArray, useFormContext } from 'react-hook-form';
-import BuildingOptions from '../Forms/BuildingField';
-import CoreFacultyField from '../Forms/CoreFacultyField';
-import FormSelectField from '../Forms/FormSelectField';
-import FormTimePicker from '../Forms/FormTimePicker';
-import RoomOptions from '../Forms/RoomField';
+// import { daysOptions } from '@/constants/global';
+// import { Button, Col, Empty, Row } from 'antd';
+// import { useFieldArray, useFormContext } from 'react-hook-form';
+// import BuildingOptions from '../Forms/BuildingField';
+// import CoreFacultyField from '../Forms/CoreFacultyField';
+// import FormSelectField from '../Forms/FormSelectField';
+// import FormTimePicker from '../Forms/FormTimePicker';
+// import RoomOptions from '../Forms/RoomField';
 
 const FormDynamicFields = () => {
-  const { control } = useFormContext();
+  // const { control } = useFormContext();
 
-  const { fields, append, remove } = useFieldArray({
-    control,
-    name: 'classSchedules',
-  });
+  // const { fields, append, remove } = useFieldArray({
+  //   control,
+  //   name: 'classSchedules',
+  // });
 
   return (
     <>
       <div>
-        {fields.length > 0 ? (
+        <h1>tba</h1>
+        {/* {fields.length > 0 ? (
           fields.map((item, index) => {
             return (
               <div
@@ -91,7 +92,7 @@ const FormDynamicFields = () => {
       >
         <Button type="primary" onClick={() => append(undefined)}>
           Add Schedule
-        </Button>
+        </Button> */}
       </div>
     </>
   );

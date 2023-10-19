@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import BlogCard from '../common/BlogCard';
 
 // @ts-ignore
@@ -24,12 +25,12 @@ function LatestBlogs({ blogs }) {
                 <BlogCard key={blog?.id} blog={blog} />
               ))}
             </div>
-            <a
-              href="#"
+            <Link
+              href="/blogs"
               className="inline-block items-center bg-teal-700 px-6 py-3 text-center font-semibold text-white"
             >
               View More
-            </a>
+            </Link>
           </div>
         </div>
       </section>
