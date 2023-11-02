@@ -127,7 +127,7 @@ const CustomerBookingListPage = () => {
                 style={{
                   margin: '0px 5px',
                 }}
-                className="bg-green-500 text-white flex items-center"
+                className="bg-rose-500 text-white flex items-center"
                 onClick={() => {
                   setCancelOpen(true);
                   setBookingData(data);

@@ -29,7 +29,7 @@ const HCModal = ({
       cancelButtonProps={{
         style: {
           display: showCancelButton ? 'inline' : 'none',
-          backgroundColor: '#0f766e',
+          backgroundColor: '#3498DB ',
           color: 'white',
         },
       }}

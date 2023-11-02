@@ -52,7 +52,7 @@ function RegisterForm() {
         md={18}
         lg={14}
         style={{ marginTop: '-96px' }}
-        className=" bg-teal-50 p-8 rounded-md"
+        className=" bg-rose-50 p-8 rounded-md"
       >
         <h1 className=" text-center text-2xl text-teal-900 font-bold mb-8 capitalize">
           Registration

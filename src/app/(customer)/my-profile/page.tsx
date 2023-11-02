@@ -56,7 +56,7 @@ function CustomerMyProfilePage() {
         <h1 className="text-center">
           Welcome to your profile {profileData?.fullName}
         </h1>
-        <div className="w-[150px] h-[150px] bg-teal-500 mx-auto mt-4">
+        <div className="w-[150px] h-[150px] bg-rose-500 mx-auto mt-4">
           <img
             src={profileData?.profileImageUrl}
             alt="avatar"

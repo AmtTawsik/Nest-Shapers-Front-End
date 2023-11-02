@@ -23,7 +23,7 @@ export default function FormTimePicker({ name, label }: FormTimePickerProps) {
             onChange={(el, value) => {
               setValue(name, value);
             }}
-            style={{ width: '100%' }}
+            style={{ width: '100%', color:'black' }}
           />
         )}
       />

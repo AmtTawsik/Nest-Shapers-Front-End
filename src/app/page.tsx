@@ -53,19 +53,16 @@ export default async function Home() {
 
   return (
     <main>
-      <div className=" bg-teal-700 text-center text-sm py-2 px-2 text-white">
-        Protect and Decorate Your Home With our Best Nest Shapers
-      </div>
       <PublicHeader />
       <HomeBanner />
       <Overview />
       <Features />
       <Categories categories={categoriesData} />
       <Services featuredServices={updatedFeaturedServices} />
-      <CallToAction />
       <UpcomingService upcomingServices={upcomingServiesData} />
       <Reviews />
       <LatestBlogs blogs={blogsData} />
+      <CallToAction />
       <Showcase />
     </main>
   );

@@ -3,8 +3,8 @@ import ServiceCard from '../common/ServiceCard';
 
 function Services({ featuredServices }: { featuredServices: any }) {
   return (
-    <div className="bg-teal-50">
-      <div className="py-24 md:py-32 lg:py-32 mx-auto w-full max-w-7xl px-5 md:px-10 bg-teal-50">
+    <div className="bg-rose-50">
+      <div className="py-24 md:py-32 lg:py-32 mx-auto w-full max-w-7xl px-5 md:px-10 bg-rose-50">
         <div className="flex-col flex items-center">
           <div className="max-w-[800px] text-center mb-8 md:mb-12 lg:mb-16">
             <h2 className="font-bold text-3xl text-teal-950 md:text-5xl">

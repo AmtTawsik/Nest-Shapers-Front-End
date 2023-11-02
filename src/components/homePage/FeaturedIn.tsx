@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 function FeaturedIn() {
   return (
-    <section className="bg-teal-50 py-8 lg:py-12 px-12" id="feature">
+    <section className="bg-rose-50 py-8 lg:py-12 px-12" id="feature">
       <div className="container">
         <h2 className="text-sm text-teal-700 uppercase font-semibold text-center mb-8">
           We featured in

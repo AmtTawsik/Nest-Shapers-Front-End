@@ -8,14 +8,14 @@ function BlogCard({ blog }) {
       {' '}
       <Link
         href={blog?.blogLink}
-        className="flex max-w-full grid-cols-1 flex-col gap-4 bg-white p-4 text-black max-[991px]:text-left max-[767px]:items-center max-[767px]:px-4 max-[767px]:py-8 max-[479px]:w-full rounded-md"
+        className="flex max-w-full border-2 grid-cols-1 flex-col gap-4 bg-white text-black max-[991px]:text-left max-[767px]:items-center max-[767px]:py-8 max-[479px]:w-full rounded-xl shadow-lg"
       >
         <img
           src={blog?.imageUrl}
           alt=""
-          className="inline-block w-full object-cover h-60"
+          className="inline-block w-full object-cover rounded-t-xl h-60"
         />
-        <div className="flex w-full flex-col items-start justify-start px-0 py-4">
+        <div className="flex w-full flex-col items-start justify-start px-2 py-4">
           <div className="bg-teal-100 px-2 py-1.5 rounded-md mb-4">
             <p className="font-semibold text-teal-700 text-sm sm:text-sm">
               {blog?.serviceCategory?.categoryName}
@@ -32,7 +32,7 @@ function BlogCard({ blog }) {
               <p className="ml-2 mr-2 text-[#636262] max-[991px]:hidden text-sm sm:text-sm">
                 -
               </p>
-              <p className="text-[#636262] text-sm sm:text-sm">6 mins read</p>
+              <p className="text-[#636262] text-sm sm:text-sm">8 mins read</p>
             </div>
           </div>
         </div>

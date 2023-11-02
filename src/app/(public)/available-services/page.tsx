@@ -114,7 +114,7 @@ function AvailableServicePage() {
               </p>
             </div>
           </div>
-          <div className="bg-teal-50 w-full mb-14 px-12 py-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 md:gap-4 lg:gap-6 justify-items-center sm:justify-items-stretch">
+          <div className="bg-rose-50 w-full mb-14 px-12 py-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 md:gap-4 lg:gap-6 justify-items-center sm:justify-items-stretch">
             <Search
               placeholder="input service name"
               enterButton="Search"

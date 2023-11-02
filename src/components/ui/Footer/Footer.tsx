@@ -1,139 +1,90 @@
 /* eslint-disable @next/next/no-img-element */
 function Footer() {
   return (
-    <footer className="relative text-white bg-teal-950">
-      <div className="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-16 lg:py-16">
-        <div className="flex flex-col items-center">
-          <a href="#" className="text-white text-4xl font-bold">
-            Nest <span className="text-hcOrange-base">Shapers</span>
-          </a>
-          <p className="mx-auto mt-4 max-w-[528px] text-center text-[#636262]">
-            Lorem ipsum dolor sit amet consectetur adipiscing elit ut
-            aliquam,purus sit amet luctus magna fringilla urna
-          </p>
-
-          <div className="mt-10 text-center font-semibold">
-            <a
-              href="#"
-              className="inline-block px-6 py-2 text-white transition [border-bottom:1px_solid_rgba(0,_0,_0,_0)] hover:text-white hover:[border-bottom:1px_solid_#ca7558]"
-            >
-              About
-            </a>
-            <a
-              href="#"
-              className="inline-block px-6 py-2 text-white transition [border-bottom:1px_solid_rgba(0,_0,_0,_0)] hover:text-white hover:[border-bottom:1px_solid_#ca7558]"
-            >
-              Features
-            </a>
-            <a
-              href="#"
-              className="inline-block px-6 py-2 text-white transition [border-bottom:1px_solid_rgba(0,_0,_0,_0)] hover:text-white hover:[border-bottom:1px_solid_#ca7558]"
-            >
-              Works
-            </a>
-            <a
-              href="#"
-              className="inline-block px-6 py-2 text-white transition [border-bottom:1px_solid_rgba(0,_0,_0,_0)] hover:text-white hover:[border-bottom:1px_solid_#ca7558]"
-            >
-              Support
-            </a>
-            <a
-              href="#"
-              className="inline-block px-6 py-2 text-white transition [border-bottom:1px_solid_rgba(0,_0,_0,_0)] hover:text-white hover:[border-bottom:1px_solid_#ca7558]"
-            >
-              Help
-            </a>
+    <footer className="bg-white dark:bg-gray-900">
+    <div className="mx-auto w-full p-4">
+        <div className="md:flex md:justify-between">
+          <div className="mb-6 md:mb-0">
+              <a href="https://NestShapers.com/" className="flex items-center">
+                  <span className="self-center text-2xl font-semibold whitespace-nowrap text-hcGreen-base">Nest<span className="text-hcOrange-base">Shapers</span></span>
+              </a>
           </div>
-
-          <div className=" mt-10 flex gap-7 px-6 py-2.5">
-            <a
-              href="#"
-              className="max-w-[24px] text-[#3a3a3a] transition hover:text-teal-700"
-            >
-              <svg
-                width="40"
-                height="41"
-                viewBox="0 0 40 41"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M0 20.0176C0 31.0633 8.95431 40.0176 20 40.0176C31.0457 40.0176 40 31.0633 40 20.0176C40 8.97188 31.0457 0.0175781 20 0.0175781C8.95431 0.0175781 0 8.97188 0 20.0176Z"
-                  fill="#ca7558"
-                ></path>
-                <path
-                  d="M12.5938 13.0019C12.9629 12.9588 13.3255 13.1241 13.5352 13.4309C15.0105 15.5897 16.7826 16.4878 18.7489 16.6921C18.8454 15.8509 19.0724 15.0197 19.4991 14.288C20.125 13.2143 21.143 12.4239 22.5972 12.1318C24.6066 11.7282 26.1366 12.4559 27.0244 13.3471L28.8162 13.0122C29.199 12.9406 29.5884 13.0977 29.8144 13.4148C30.0403 13.7319 30.0617 14.1513 29.8691 14.4897L28.1496 17.5118C28.3064 21.8732 27.0944 24.9169 24.5103 27.0139C23.1395 28.1262 21.178 28.7571 19.0249 28.9519C16.855 29.1482 14.4021 28.9108 11.9638 28.1988C11.536 28.0739 11.2425 27.681 11.2441 27.2354C11.2457 26.7897 11.542 26.3989 11.9706 26.277C13.1968 25.9283 14.1301 25.6268 14.9738 25.1003C13.7753 24.464 12.8923 23.6322 12.2673 22.6839C11.3986 21.3658 11.0765 19.8964 11.0125 18.5711C10.9486 17.2459 11.1401 16.0185 11.3418 15.1327C11.4566 14.6285 11.5907 14.1218 11.7755 13.6379C11.9098 13.2891 12.2246 13.0449 12.5938 13.0019Z"
-                  fill="currentColor"
-                ></path>
-              </svg>
-            </a>
-            <a
-              href="#"
-              className="max-w-[24px] text-[#3a3a3a] transition hover:text-teal-700"
-            >
-              <svg
-                width="40"
-                height="41"
-                viewBox="0 0 40 41"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M0 20.0176C0 31.0633 8.9543 40.0176 20 40.0176C31.0457 40.0176 40 31.0633 40 20.0176C40 8.97188 31.0457 0.0175781 20 0.0175781C8.9543 0.0175781 0 8.97188 0 20.0176Z"
-                  fill="#ca7558"
-                ></path>
-                <path
-                  d="M21.0642 14.2002L21.8087 13.8944C22.4141 13.6533 23.1955 13.409 24.1192 13.5643C26.01 13.8821 27.3145 14.9031 28.0914 16.2573C28.3908 16.7791 28.1489 17.4666 27.5887 17.686C26.6569 18.0509 25.9999 18.9575 25.9999 20.015C25.9999 21.1227 26.7211 22.0647 27.7222 22.3919C28.2405 22.5614 28.5317 23.1367 28.3615 23.6547C27.9201 24.9974 27.2836 26.2363 26.5305 27.2363C25.7871 28.2236 24.879 29.0446 23.868 29.4448C23.2088 29.7058 22.5002 29.6083 21.8227 29.4402L21.4206 29.3332L20.8237 29.1598C20.5528 29.0815 20.2747 29.0133 19.9999 29.0133C19.7251 29.0133 19.447 29.0815 19.1761 29.1598L18.5793 29.3332L18.1772 29.4402C17.4996 29.6083 16.7911 29.7058 16.1319 29.4448C14.8586 28.9408 13.7355 27.7648 12.8874 26.3784C12.0242 24.9673 11.3701 23.2178 11.1034 21.3925C10.8762 19.838 10.9988 18.0935 11.7181 16.6169C12.4589 15.0962 13.8138 13.9117 15.8806 13.5643C16.7204 13.4231 17.4426 13.6121 18.0218 13.8288L18.352 13.9597L18.9357 14.2002C19.3354 14.3568 19.6515 14.449 19.9999 14.449C20.3484 14.449 20.6645 14.3568 21.0642 14.2002ZM19.7677 10.2828C20.744 9.30649 22.2426 9.22214 22.5961 9.5757C22.9497 9.92925 22.8653 11.4278 21.889 12.4041C20.9127 13.3804 19.4141 13.4648 19.0606 13.1112C18.707 12.7577 18.7914 11.2591 19.7677 10.2828Z"
-                  fill="currentColor"
-                ></path>
-              </svg>
-            </a>
-            <a
-              href="#"
-              className="max-w-[24px] text-[#3a3a3a] transition hover:text-teal-700"
-            >
-              <svg
-                width="40"
-                height="41"
-                viewBox="0 0 40 41"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M0 20.0176C0 31.0633 8.9543 40.0176 20 40.0176C31.0457 40.0176 40 31.0633 40 20.0176C40 8.97188 31.0457 0.0175781 20 0.0175781C8.9543 0.0175781 0 8.97188 0 20.0176Z"
-                  fill="#ca7558"
-                ></path>
-                <path
-                  d="M15.0236 9.80887C15.6422 10.0193 16.4075 10.3546 17.1487 10.8544C18.0469 10.6228 19.0061 10.4983 20.0001 10.4983C20.993 10.4983 21.9513 10.6226 22.8488 10.8537C23.5898 10.3541 24.3549 10.019 24.9733 9.8087C25.6702 9.57176 26.6635 9.18702 27.2532 9.84033C27.6536 10.2839 27.7529 11.0283 27.8243 11.5958C27.9041 12.23 27.9227 13.0567 27.7128 13.8763C28.5157 14.9131 29.0001 16.1507 29.0001 17.4983C29.0001 19.5405 27.894 21.3131 26.2569 22.5409C25.5034 23.106 24.6274 23.5656 23.6667 23.8971C23.8811 24.3874 24.0001 24.929 24.0001 25.4983V28.4983C24.0001 29.0506 23.5523 29.4983 23.0001 29.4983H17C16.4478 29.4983 16 29.0506 16 28.4983V27.507C15.0447 27.624 14.2441 27.5205 13.5626 27.2314C12.8508 26.9294 12.3547 26.461 11.9818 26.0135C11.6281 25.5891 11.2425 24.6332 10.6838 24.447C10.1599 24.2723 9.8767 23.706 10.0513 23.1821C10.226 22.6581 10.7923 22.375 11.3163 22.5496C11.982 22.7715 12.4155 23.2517 12.7132 23.6369C13.1923 24.2568 13.5836 25.0678 14.3437 25.3902C14.6563 25.5228 15.1155 25.6108 15.8323 25.512L16.0001 25.4785C16.0028 24.9164 16.1215 24.3817 16.3334 23.8971C15.3727 23.5656 14.4967 23.106 13.7432 22.5409C12.1061 21.3131 11.0001 19.5405 11.0001 17.4983C11.0001 16.1523 11.4833 14.9159 12.2845 13.8799C12.0738 13.0596 12.0922 12.2321 12.1719 11.5973C12.1735 11.5845 12.1751 11.5717 12.1767 11.5589C12.2496 10.9774 12.3355 10.2921 12.7431 9.84044C13.3327 9.18709 14.3268 9.5719 15.0236 9.80887Z"
-                  fill="currentColor"
-                ></path>
-              </svg>
-            </a>
-            <a
-              href="#"
-              className="max-w-[24px] text-[#3a3a3a] transition hover:text-teal-700"
-            >
-              <svg
-                width="40"
-                height="41"
-                viewBox="0 0 40 41"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M0 20.0176C0 31.0633 8.95431 40.0176 20 40.0176C31.0457 40.0176 40 31.0633 40 20.0176C40 8.97188 31.0457 0.0175781 20 0.0175781C8.95431 0.0175781 0 8.97188 0 20.0176Z"
-                  fill="#ca7558"
-                ></path>
-                <path
-                  d="M21.5 29.9059C26.3113 29.1821 30 25.0306 30 20.0176C30 14.4947 25.5228 10.0176 20 10.0176C14.4771 10.0176 10 14.4947 10 20.0176C10 25.0306 13.6887 29.1821 18.5 29.9059V23.0176H17C16.1716 23.0176 15.5 22.346 15.5 21.5176C15.5 20.6892 16.1716 20.0176 17 20.0176H18.5V18.0176C18.5 16.0846 20.067 14.5176 22 14.5176H22.5C23.3284 14.5176 24 15.1891 24 16.0176C24 16.846 23.3284 17.5176 22.5 17.5176H22C21.7239 17.5176 21.5 17.7414 21.5 18.0176V20.0176H23C23.8284 20.0176 24.5 20.6892 24.5 21.5176C24.5 22.346 23.8284 23.0176 23 23.0176H21.5V29.9059Z"
-                  fill="currentColor"
-                ></path>
-              </svg>
-            </a>
+          <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+              <div>
+                  <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Resources</h2>
+                  <ul className="text-gray-500 dark:text-gray-400 font-medium">
+                      <li className="mb-4">
+                          <a href="https://NestShapers.com/" className="hover:underline">NestShapers</a>
+                      </li>
+                      <li>
+                          <a href="https://tailwindcss.com/" className="hover:underline">Tailwind CSS</a>
+                      </li>
+                  </ul>
+              </div>
+              <div>
+                  <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Follow us</h2>
+                  <ul className="text-gray-500 dark:text-gray-400 font-medium">
+                      <li className="mb-4">
+                          <a href="https://github.com/themesberg/NestShapers" className="hover:underline ">Github</a>
+                      </li>
+                      <li>
+                          <a href="https://discord.gg/4eeurUVvTy" className="hover:underline">Discord</a>
+                      </li>
+                  </ul>
+              </div>
+              <div>
+                  <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
+                  <ul className="text-gray-500 dark:text-gray-400 font-medium">
+                      <li className="mb-4">
+                          <a href="#" className="hover:underline">Privacy Policy</a>
+                      </li>
+                      <li>
+                          <a href="#" className="hover:underline">Terms &amp; Conditions</a>
+                      </li>
+                  </ul>
+              </div>
           </div>
-        </div>
       </div>
-    </footer>
+      <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+      <div className="sm:flex sm:items-center sm:justify-between">
+          <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="https://NestShapers.com/" className="hover:underline">NestShapers™</a>. All Rights Reserved.
+          </span>
+          <div className="flex mt-4 space-x-5 sm:justify-center sm:mt-0">
+              <a href="#" className="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                  <svg className="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 8 19">
+                        <path fill-rule="evenodd" d="M6.135 3H8V0H6.135a4.147 4.147 0 0 0-4.142 4.142V6H0v3h2v9.938h3V9h2.021l.592-3H5V3.591A.6.6 0 0 1 5.592 3h.543Z" clip-rule="evenodd"/>
+                    </svg>
+                  <span className="sr-only">Facebook page</span>
+              </a>
+              <a href="#" className="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                  <svg className="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 21 16">
+                        <path d="M16.942 1.556a16.3 16.3 0 0 0-4.126-1.3 12.04 12.04 0 0 0-.529 1.1 15.175 15.175 0 0 0-4.573 0 11.585 11.585 0 0 0-.535-1.1 16.274 16.274 0 0 0-4.129 1.3A17.392 17.392 0 0 0 .182 13.218a15.785 15.785 0 0 0 4.963 2.521c.41-.564.773-1.16 1.084-1.785a10.63 10.63 0 0 1-1.706-.83c.143-.106.283-.217.418-.33a11.664 11.664 0 0 0 10.118 0c.137.113.277.224.418.33-.544.328-1.116.606-1.71.832a12.52 12.52 0 0 0 1.084 1.785 16.46 16.46 0 0 0 5.064-2.595 17.286 17.286 0 0 0-2.973-11.59ZM6.678 10.813a1.941 1.941 0 0 1-1.8-2.045 1.93 1.93 0 0 1 1.8-2.047 1.919 1.919 0 0 1 1.8 2.047 1.93 1.93 0 0 1-1.8 2.045Zm6.644 0a1.94 1.94 0 0 1-1.8-2.045 1.93 1.93 0 0 1 1.8-2.047 1.918 1.918 0 0 1 1.8 2.047 1.93 1.93 0 0 1-1.8 2.045Z"/>
+                    </svg>
+                  <span className="sr-only">Discord community</span>
+              </a>
+              <a href="#" className="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                  <svg className="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 17">
+                    <path fill-rule="evenodd" d="M20 1.892a8.178 8.178 0 0 1-2.355.635 4.074 4.074 0 0 0 1.8-2.235 8.344 8.344 0 0 1-2.605.98A4.13 4.13 0 0 0 13.85 0a4.068 4.068 0 0 0-4.1 4.038 4 4 0 0 0 .105.919A11.705 11.705 0 0 1 1.4.734a4.006 4.006 0 0 0 1.268 5.392 4.165 4.165 0 0 1-1.859-.5v.05A4.057 4.057 0 0 0 4.1 9.635a4.19 4.19 0 0 1-1.856.07 4.108 4.108 0 0 0 3.831 2.807A8.36 8.36 0 0 1 0 14.184 11.732 11.732 0 0 0 6.291 16 11.502 11.502 0 0 0 17.964 4.5c0-.177 0-.35-.012-.523A8.143 8.143 0 0 0 20 1.892Z" clip-rule="evenodd"/>
+                </svg>
+                  <span className="sr-only">Twitter page</span>
+              </a>
+              <a href="#" className="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                  <svg className="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 .333A9.911 9.911 0 0 0 6.866 19.65c.5.092.678-.215.678-.477 0-.237-.01-1.017-.014-1.845-2.757.6-3.338-1.169-3.338-1.169a2.627 2.627 0 0 0-1.1-1.451c-.9-.615.07-.6.07-.6a2.084 2.084 0 0 1 1.518 1.021 2.11 2.11 0 0 0 2.884.823c.044-.503.268-.973.63-1.325-2.2-.25-4.516-1.1-4.516-4.9A3.832 3.832 0 0 1 4.7 7.068a3.56 3.56 0 0 1 .095-2.623s.832-.266 2.726 1.016a9.409 9.409 0 0 1 4.962 0c1.89-1.282 2.717-1.016 2.717-1.016.366.83.402 1.768.1 2.623a3.827 3.827 0 0 1 1.02 2.659c0 3.807-2.319 4.644-4.525 4.889a2.366 2.366 0 0 1 .673 1.834c0 1.326-.012 2.394-.012 2.72 0 .263.18.572.681.475A9.911 9.911 0 0 0 10 .333Z" clip-rule="evenodd"/>
+                  </svg>
+                  <span className="sr-only">GitHub account</span>
+              </a>
+              <a href="#" className="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                  <svg className="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 0a10 10 0 1 0 10 10A10.009 10.009 0 0 0 10 0Zm6.613 4.614a8.523 8.523 0 0 1 1.93 5.32 20.094 20.094 0 0 0-5.949-.274c-.059-.149-.122-.292-.184-.441a23.879 23.879 0 0 0-.566-1.239 11.41 11.41 0 0 0 4.769-3.366ZM8 1.707a8.821 8.821 0 0 1 2-.238 8.5 8.5 0 0 1 5.664 2.152 9.608 9.608 0 0 1-4.476 3.087A45.758 45.758 0 0 0 8 1.707ZM1.642 8.262a8.57 8.57 0 0 1 4.73-5.981A53.998 53.998 0 0 1 9.54 7.222a32.078 32.078 0 0 1-7.9 1.04h.002Zm2.01 7.46a8.51 8.51 0 0 1-2.2-5.707v-.262a31.64 31.64 0 0 0 8.777-1.219c.243.477.477.964.692 1.449-.114.032-.227.067-.336.1a13.569 13.569 0 0 0-6.942 5.636l.009.003ZM10 18.556a8.508 8.508 0 0 1-5.243-1.8 11.717 11.717 0 0 1 6.7-5.332.509.509 0 0 1 .055-.02 35.65 35.65 0 0 1 1.819 6.476 8.476 8.476 0 0 1-3.331.676Zm4.772-1.462A37.232 37.232 0 0 0 13.113 11a12.513 12.513 0 0 1 5.321.364 8.56 8.56 0 0 1-3.66 5.73h-.002Z" clip-rule="evenodd"/>
+                </svg>
+                  <span className="sr-only">Dribbble account</span>
+              </a>
+          </div>
+      </div>
+    </div>
+</footer>
+
   );
 }
 

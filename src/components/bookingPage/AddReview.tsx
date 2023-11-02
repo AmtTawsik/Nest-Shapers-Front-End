@@ -40,7 +40,7 @@ function AddReview({ serviceId }: { serviceId: string }) {
     <div>
       <h2 className="text-lg text-teal-950 mb-3 font-semibold">Your Review:</h2>
       <form
-        className=" max-w-[400px] bg-teal-50 p-4 rounded-md"
+        className=" max-w-[400px] bg-rose-50 p-4 rounded-md"
         onSubmit={onSubmit}
       >
         <div>

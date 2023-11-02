@@ -41,7 +41,7 @@ function AboutUsSection() {
             </div>
           </div>
 
-          <div className="block overflow-hidden bg-teal-50 max-[991px]:h-[475px] rounded-md w-full lg:w-[30%]">
+          <div className="block overflow-hidden bg-rose-50 max-[991px]:h-[475px] rounded-md w-full lg:w-[30%]">
             <img
               src="https://i.ibb.co/fGj7yPj/pexels-greta-hoffman-7728943.jpg"
               alt=""

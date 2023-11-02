@@ -8,10 +8,10 @@ function Categories({ categories }) {
         <div className="">
           <div className="text-center">
             <h2 className="font-bold text-3xl text-teal-950 md:text-5xl">
-              Explore Our House Servicing Specialties
+              Explore Our Services
             </h2>
             <div className="mx-auto mt-4 max-w-[528px] mb-8 md:mb-1 lg:mb-16">
-              <p className="text-hcOrange-base font-semibold">
+              <p className="text-hcOrange-base font-bold">
                 Tailored Services to Elevate Every Aspect of Your Home
               </p>
             </div>

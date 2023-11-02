@@ -1,15 +1,24 @@
+import { Image } from 'antd';
+
 function CallToAction() {
   return (
     <div>
-      <section className="bg-teal-800 ">
-        <div className="mx-auto w-full max-w-7xl bg-teal-800  text-white">
-          <div className="mx-auto w-full max-w-3xl py-16 text-center md:py-24 lg:py-32">
+      <section className="bg-teal-800 md:grid grid-cols-2 items-center gap-5 px-5 py-10">
+        <div className='w-full'>
+          <img
+            alt="showcase work image"
+            src="https://maidinto.ca/wp-content/uploads/2022/10/Why-House-Cleaning-Services-Are-Important-for-Your-Healthier-Lifestyle.jpeg"
+            className="w-full rounded-xl"
+          />
+        </div>
+        <div className="mx-auto w-full bg-teal-800 text-white">
+          <div className="mx-auto w-full text-center">
             <div className="mb-6 flex-col md:mb-10 lg:mb-12">
               <h2 className="mb-8 text-3xl font-bold md:text-5xl">
-                Subscribe to our newsletter for exclusive updates, tips and
+                Subscribe to our newsletter for exclusive updates and
                 special offers
               </h2>
-              <div className="mx-auto max-w-md">
+              <div className="mx-auto">
                 <p>
                   Be the first to know about our new services, promotions, and
                   expert insights. join our commiunity and lets enhance your

@@ -52,7 +52,7 @@ const Navbar = ({
 
   return (
     <Layout className="layout">
-      <Header className="flex items-center px-3 lg:px-12 bg-teal-50 lg:h-20">
+      <Header className="flex items-center px-3 lg:px-12 bg-rose-50 lg:h-20">
         {/* Sider nav button for mobile device start */}
         {hasSider && (
           <Button
@@ -84,7 +84,7 @@ const Navbar = ({
 
         {/* Desktop menubar start */}
         <Menu
-          className="lg:flex lg:items-center hidden bg-teal-50 text-teal-700 font-bold text-base"
+          className="lg:flex lg:items-center hidden bg-rose-50 text-teal-700 font-bold text-base"
           disabledOverflow
           theme="dark"
           mode="horizontal"

@@ -30,7 +30,7 @@ function BookForm() {
 
   return (
     <Row justify="center" align="middle">
-      <Col className=" bg-teal-50 p-8 rounded-md">
+      <Col className=" bg-rose-50 p-8 rounded-md">
         <h1 className=" text-center text-2xl text-teal-900 font-bold mb-8 capitalize">
           Book This Service
         </h1>

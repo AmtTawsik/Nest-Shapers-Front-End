@@ -16,7 +16,7 @@ function Blogs() {
   }
 
   return (
-    <div className="bg-teal-50">
+    <div className="bg-rose-50">
       <section className="block">
         <div className="py-16 md:py-24 lg:py-32 mx-auto w-full max-w-7xl px-5 md:px-10">
           <div className="flex flex-col items-center">

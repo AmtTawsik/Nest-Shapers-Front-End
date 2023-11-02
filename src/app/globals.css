@@ -405,16 +405,16 @@ video {
 
 .ant-menu-item-selected {
   background-color: transparent !important;
-  color: #ca7558 !important;
+  color: #F1C40F !important;
 }
 
 .sidebar-menu .ant-menu-item-selected {
-  background-color: #ca7558 !important;
+  background-color: #F1C40F !important;
   color: white !important;
 }
 
 .ant-menu .ant-menu-item a:hover {
-  color: #ca7558 !important;
+  color: #F1C40F !important;
 }
 
 .sidebar-menu .ant-menu-item a:hover {
@@ -422,5 +422,5 @@ video {
 }
 
 .ant-input-search-button {
-  background-color: #ca7558 !important;
+  background-color: #F1C40F !important;
 }
